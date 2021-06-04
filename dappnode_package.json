@@ -1,0 +1,25 @@
+{
+  "name": "hopr.dnp.dappnode.eth",
+  "version": "0.1.0",
+  "description": "The HOPR protocol ensures everyone has control of their privacy, data, and identity. By running a HOPR Node, you can obtain HOPR tokens by relaying data and connect to the HOPR Network.",
+  "type": "service",
+  "author": "DAppNode Association <admin@dappnode.io> (https://github.com/dappnode)",
+  "contributors": [
+    "Tropicar <tropicar@protonmail.com> (https://github.com/tropicar)"
+  ],
+  "architectures": ["linux/amd64"],
+  "categories": ["Blockchain"],
+  "links": {
+    "homepage": "https://hoprnet.org/",
+    "logs": "http://hopr.public.dappnode:3000",
+    "healthcheck": "http://hopr.public.dappnode:8080/healthcheck/v1/version"
+  },
+
+  "backup": [
+    {
+      "name": "db",
+      "path": "/app/db"
+    }
+  ],
+  "license": "GLP-3.0"
+}

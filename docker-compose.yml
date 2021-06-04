@@ -1,0 +1,23 @@
+version: "3.4"
+services:
+  hopr.dnp.dappnode.eth:
+    image: "hopr.dnp.dappnode.eth:0.1.0"
+    build:
+      context: ./build
+    environment:
+      DEBUG: hopr*
+      DB_PASSWORD: open-sesame-iTwnsPNg0hpagP+o6T0KOwiH9RQ0
+    volumes:
+      - "db:/app/db"
+    ports:
+      - "9091"
+      - "3000"
+      - "3001"
+      - "8080"
+      - "53"
+    dns:
+      - 172.33.1.2
+      - 8.8.8.8
+    restart: unless-stopped
+volumes:
+  db: {}

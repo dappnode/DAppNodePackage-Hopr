@@ -1,0 +1,11 @@
+version: "2"
+fields:
+  - id: DB_PASSWORD
+    target:
+      type: environment
+      name: DB_PASSWORD
+      service: hopr.dnp.dappnode.eth
+    title: Database Password
+    required: true
+    description: It's the password which will be used to encrypt the database.
+    secret: true
