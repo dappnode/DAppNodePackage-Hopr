@@ -15,8 +15,8 @@
   "categories": ["Blockchain"],
   "links": {
     "homepage": "https://hoprnet.org/",
-    "logs": "http://hopr.dnp.dappnode:3000",
-    "healthcheck": "http://hopr.dnp.dappnode:8080/healthcheck/v1/version"
+    "logs": "http://hopr.dappnode:3000",
+    "healthcheck": "http://hopr.dappnode:8080/healthcheck/v1/version"
   },
   "repository": {
     "type": "git",
