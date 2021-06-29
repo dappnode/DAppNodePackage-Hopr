@@ -1,4 +1,4 @@
-FROM gcr.io/hoprassociation/hoprd:latest
+FROM gcr.io/hoprassociation/hoprd:latest-release
 ARG DB_PASSWORD
 VOLUME ["/app/db"]
 
@@ -9,5 +9,5 @@ EXPOSE 3001
 # Healthcheck server
 EXPOSE 8080
 
-ENTRYPOINT ["node", "/app/index.js", "--password=${DB_PASSWORD}", "--init", "--admin", "--adminHost", "0.0.0.0", "--healthCheck", "--identity", "/app/db/.hopr-identity"]
+ENTRYPOINT ["/usr/bin/tini", "--", "yarn", "hoprd", "--password=${DB_PASSWORD}", "--init", "--admin", "--adminHost", "0.0.0.0", "--healthCheck", "--identity", "/app/db/.hopr-identity"]
 
