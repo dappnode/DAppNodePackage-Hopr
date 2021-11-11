@@ -1,13 +1,4 @@
-FROM gcr.io/hoprassociation/hoprd:latest-release
-ARG DB_PASSWORD
-VOLUME ["/app/db"]
+FROM gcr.io/hoprassociation/hoprd:latest-freiburg
 
-# Admin web server
-EXPOSE 3000
-# REST API
-EXPOSE 3001
-# Healthcheck server
-EXPOSE 8080
-
-ENTRYPOINT ["/usr/bin/tini", "--", "yarn", "hoprd", "--password=${DB_PASSWORD}", "--init", "--admin", "--adminHost", "0.0.0.0", "--healthCheck", "--identity", "/app/db/.hopr-identity"]
+ENTRYPOINT ["/usr/bin/tini", "--", "yarn", "hoprd", "--password='open-sesame-iTwnsPNg0hpagP+o6T0KOwiH9RQ0'", "--init", "--admin", "--adminHost", "0.0.0.0", "--identity", "/app/db/.hopr-identity", "--testNoAuthentication", "--healthCheck", "--healthCheckHost", "0.0.0.0"]
 
