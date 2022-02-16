@@ -9,3 +9,12 @@ fields:
     required: true
     description: It's the password which will be used to encrypt the database.
     secret: true
+  - id: API_TOKEN
+    target:
+      type: environment
+      name: API_TOKEN
+      service: hopr.dnp.dappnode.eth
+    title: Api token
+    required: true
+    description: It's the password which will be used to access to the logs
+    secret: true
