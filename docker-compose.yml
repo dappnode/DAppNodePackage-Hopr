@@ -4,6 +4,8 @@ services:
     image: "hopr.dnp.dappnode.eth:0.1.0"
     build:
       context: ./build
+      args:
+        UPSTREAM_VERSION: athens
     ports:
       - "9091"
       - "3000"
@@ -18,6 +20,7 @@ services:
     environment:
       DEBUG: hopr*
       DB_PASSWORD: open-sesame-iTwnsPNg0hpagP+o6T0KOwiH9RQ0
+      API_TOKEN: yLWk!W@Z9G&14O^xbtpBc
     restart: unless-stopped
 volumes:
   db: {}
