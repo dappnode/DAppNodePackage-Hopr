@@ -1,6 +1,7 @@
 ARG UPSTREAM_VERSION
 FROM gcr.io/hoprassociation/hoprd:${UPSTREAM_VERSION}
 
+#Entrypoint
 ENTRYPOINT [ "sh", "-c", "exec /usr/bin/tini -- yarn hoprd \ 
     --password=\"$DB_PASSWORD\" \
     --init --admin \
