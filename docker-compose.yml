@@ -5,7 +5,7 @@ services:
     build:
       context: ./build
       args:
-        UPSTREAM_VERSION: master-goerli
+        UPSTREAM_VERSION: ouagadougou
     ports:
       - "9091"
       - "3000"
@@ -13,10 +13,7 @@ services:
       - "8080"
       - "53"
     volumes:
-      - "db:/app/db"
-    dns:
-      - 172.33.1.2
-      - 8.8.8.8
+      - "db:/app/hoprd-db"
     environment:
       DEBUG: hopr*
       DB_PASSWORD: open-sesame-iTwnsPNg0hpagP+o6T0KOwiH9RQ0

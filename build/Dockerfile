@@ -10,6 +10,6 @@ ENTRYPOINT [ "sh", "-c", "exec /usr/bin/tini -- yarn hoprd \
     --restHost=\"0.0.0.0\" \
     --healthCheck \
     --healthCheckHost=\"0.0.0.0\" \
-    --data=\"/app/db/data\" \
-    --identity=\"/app/db/.data-master-goerli\" \
+    --data=\"/app/hoprd-db/data-master-goerli\" \
+    --identity=\"/app/hoprd-db/.hopr-identity\" \
     --apiToken=\"$API_TOKEN\" "]
