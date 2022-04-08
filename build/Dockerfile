@@ -10,5 +10,5 @@ ENTRYPOINT [ "sh", "-c", "exec /usr/bin/tini -- yarn hoprd \
     --healthCheck \
     --healthCheckHost=\"0.0.0.0\" \
     --data=\"/app/db/data\" \
-    --identity=\"/app/db/.hopr-id-athens\" \
+    --identity=\"/app/db/.data-master-goerli\" \
     --apiToken=\"$API_TOKEN\" "]
