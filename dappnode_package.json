@@ -9,7 +9,7 @@
   "contributors": [
     "Tropicar <tropicar@protonmail.com> (https://github.com/tropicar)"
   ],
-  "mainService": "hopr.dnp.dappnode.eth",
+  "mainService": "node",
   "upstreamRepo": "hoprnet/hoprnet",
   "upstreamArg": "UPSTREAM_VERSION",
   "categories": ["Blockchain"],
