@@ -5,7 +5,7 @@ services:
     build:
       context: ./build
       args:
-        UPSTREAM_VERSION: ouagadougou
+        UPSTREAM_VERSION: v1.88.37
     ports:
       - "9091"
       - 9091/udp
