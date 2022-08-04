@@ -7,11 +7,11 @@ services:
       args:
         UPSTREAM_VERSION: master-goerli
     ports:
-      - 9091/tcp
-      - 9091/udp
-      - 3000
-      - 3001
-      - 8080
+      - "9091:9091/tcp"
+      - "9091:9091/udp"
+      - "3000:3000"
+      - "3001:3001"
+      - "8080:8080"
     volumes:
       - "db:/app/hoprd-db"
     environment:
