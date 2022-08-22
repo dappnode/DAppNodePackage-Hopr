@@ -1,11 +1,11 @@
 version: "3.5"
 services:
   node:
-    image: "node.hopr.dnp.dappnode.eth:0.1.0"
+    image: "node.hopr.dnp.dappnode.eth:1.89.5"
     build:
       context: .
       args:
-        UPSTREAM_VERSION: master-goerli
+        UPSTREAM_VERSION: paleochora
     ports:
       - "9091:9091/tcp"
       - "9091:9091/udp"
@@ -16,7 +16,7 @@ services:
       - "db:/app/hoprd-db"
     environment:
       - DEBUG=hopr*
-      - HOPRD_ENVIRONMENT=master-goerli
+      - HOPRD_ENVIRONMENT=paleochora
       - "HOPRD_HOST=0.0.0.0:9091"
       - HOPRD_ANNOUNCE=false
       - HOPRD_ADMIN=true

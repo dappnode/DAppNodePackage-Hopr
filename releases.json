@@ -1,8 +1,32 @@
 {
   "0.1.0": {
-    "hash": "/ipfs/QmdhE9ef7FMba9E41fiqAgqJVoPFouHYSTcuRowkr5RLXX",
+    "hash": "/ipfs/QmbJfKYP16LLKHNNYp3jfNTU2t6Butwc7EZkW1NWDjqVoA",
     "uploadedTo": {
-      "dappnode": "Thu, 04 Aug 2022 07:04:25 GMT"
+      "dappnode": "Tue, 09 Aug 2022 18:51:43 GMT"
+    }
+  },
+  "0.1.1": {
+    "hash": "/ipfs/QmRVqU4eZzW3yvve5sSVtS9VAqNPmSfZcTDkHYHBPg8dVf",
+    "uploadedTo": {
+      "dappnode": "Fri, 05 Aug 2022 07:39:48 GMT"
+    }
+  },
+  "0.2.0": {
+    "hash": "/ipfs/QmeLX7iou476GQ2MVftc1m8pTqnnzZ7XCvscanF75F4eZj",
+    "uploadedTo": {
+      "dappnode": "Tue, 09 Aug 2022 18:31:13 GMT"
+    }
+  },
+  "1.88.0": {
+    "hash": "/ipfs/QmWDYy3SMd69pmMUHNFrMtnQakQvMywSyCk8pUcHtcR47u",
+    "uploadedTo": {
+      "dappnode": "Tue, 09 Aug 2022 18:40:38 GMT"
+    }
+  },
+  "1.89.5": {
+    "hash": "/ipfs/QmRSBb2beDdTtgQ3nGTfUDj1cYqt9s2YeT5SrWAE1UtMex",
+    "uploadedTo": {
+      "dappnode": "Fri, 19 Aug 2022 09:07:20 GMT"
     }
   }
 }
