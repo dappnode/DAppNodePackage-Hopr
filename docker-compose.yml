@@ -1,7 +1,7 @@
 version: "3.5"
 services:
   node:
-    image: "node.hopr.dnp.dappnode.eth:1.89.5"
+    image: "node.hopr.dnp.dappnode.eth:1.89.8"
     build:
       context: .
       args:
@@ -34,7 +34,7 @@ services:
       - HOPRD_DATA=/app/hoprd-db/data
       - HOPRD_INIT=true
       - HOPRD_ALLOW_PRIVATE_NODE_CONNECTIONS=false
-      - "HOPRD_PROVIDER=https://provider-proxy.hoprnet.workers.dev/eth_goerli"
+      - "HOPRD_PROVIDER=https://provider-proxy.hoprnet.workers.dev/xdai_mainnet"
     restart: unless-stopped
 volumes:
   db: {}

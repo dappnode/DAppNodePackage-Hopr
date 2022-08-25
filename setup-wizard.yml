@@ -30,6 +30,16 @@ fields:
     required: false
     description: Optional URL to the custom RPC provider this HOPR node should use.
     secret: false
+
+  - id: HOPRD_ENVIRONMENT
+    target:
+      type: environment
+      name: HOPRD_ENVIRONMENT
+      service: node
+    title: HOPR network environment
+    required: false
+    description: Optional network environment this HOPR node should use.
+    secret: false
   
   - id: IDENTITY
     target:
