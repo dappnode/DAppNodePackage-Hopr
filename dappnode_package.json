@@ -1,6 +1,6 @@
 {
   "name": "hopr.dnp.dappnode.eth",
-  "version": "1.89.8",
+  "version": "1.89.18",
   "upstreamVersion": "paleochora",
   "description": "The HOPR protocol ensures everyone has control of their privacy, data, and identity. By running a HOPR Node, you can obtain HOPR tokens by relaying data and connect to the HOPR Network.",
   "type": "service",
@@ -15,7 +15,7 @@
   "categories": ["Blockchain"],
   "links": {
     "homepage": "https://hoprnet.org/",
-    "ui": "http://hopr.dappnode:3000?apiEndpoint=http://hopr.dappnode:3001",
+    "ui": "http://hopr.dappnode:3000?apiEndpoint=http://hopr.dappnode:3001&apiToken=!5qxc9Lp1BE7IFQ-nrtttU",
     "api": "http://hopr.dappnode:3001",
     "healthcheck": "http://hopr.dappnode:8080/healthcheck/v1/version"
   },
