@@ -26,6 +26,13 @@
   "bugs": {
     "url": "https://github.com/dappnode/DAppNodePackage-Hopr/issues"
   },
+  "exposable": [
+    {
+      "name": "HOPR",
+      "description": "HOPR P2P port",
+      "port": 9091
+    }
+  ],
   "license": "GLP-3.0",
   "backup": [
     {
