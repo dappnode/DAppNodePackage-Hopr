@@ -30,8 +30,8 @@ services:
       - HOPRD_HEALTH_CHECK_PORT=8080
       - HOPRD_PASSWORD=open-sesame-iTwnsPNg0hpagP+o6T0KOwiH9RQ0
       - HOPRD_API_TOKEN=!5qxc9Lp1BE7IFQ-nrtttU
-      - HOPRD_IDENTITY=/app/hoprd-db/.hopr-identity
-      - HOPRD_DATA=/app/hoprd-db/data
+      - HOPRD_IDENTITY=/app/hoprd/.hopr-identity
+      - HOPRD_DATA=/app/hoprd/data
       - HOPRD_INIT=true
       - HOPRD_ALLOW_PRIVATE_NODE_CONNECTIONS=false
       - HOPRD_PROVIDER=https://provider-proxy.hoprnet.workers.dev/xdai_mainnet
