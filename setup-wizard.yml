@@ -1,20 +1,52 @@
 version: "2"
 fields:
-  - id: DB_PASSWORD
+  
+  - id: HOPRD_PASSWORD
     target:
       type: environment
-      name: DB_PASSWORD
+      name: HOPRD_PASSWORD
       service: node
     title: Database Password
     required: true
     description: It's the password which will be used to encrypt the database.
     secret: true
-  - id: API_TOKEN
+  
+  - id: HOPRD_API_TOKEN
     target:
       type: environment
-      name: API_TOKEN
+      name: HOPRD_API_TOKEN
       service: node
     title: Api token
     required: true
     description: It's the password which will be used to access to the logs
     secret: true
+  
+  - id: HOPRD_PROVIDER
+    target:
+      type: environment
+      name: HOPRD_PROVIDER
+      service: node
+    title: RPC Provider URL
+    required: false
+    description: Optional URL to the custom RPC provider this HOPR node should use.
+    secret: false
+
+  - id: HOPRD_ENVIRONMENT
+    target:
+      type: environment
+      name: HOPRD_ENVIRONMENT
+      service: node
+    title: HOPR network environment
+    required: false
+    description: Optional network environment this HOPR node should use.
+    secret: false
+  
+  - id: IDENTITY
+    target:
+      type: fileUpload
+      path: /app/hoprd/.hopr-identity
+      service: node
+    title: Custom identity file
+    required: false
+    description: Upload custom identity file of a previously deployed HOPR node.
+    secret: false

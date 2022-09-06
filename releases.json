@@ -1,8 +1,44 @@
 {
   "0.1.0": {
-    "hash": "/ipfs/QmYBtLitBzzGKtgxifzjDvMUnes1y8mYW7uHaV413kYYep",
+    "hash": "/ipfs/QmbJfKYP16LLKHNNYp3jfNTU2t6Butwc7EZkW1NWDjqVoA",
     "uploadedTo": {
-      "dappnode": "Fri, 04 Jun 2021 10:42:59 GMT"
+      "dappnode": "Tue, 09 Aug 2022 18:51:43 GMT"
+    }
+  },
+  "0.1.1": {
+    "hash": "/ipfs/QmRVqU4eZzW3yvve5sSVtS9VAqNPmSfZcTDkHYHBPg8dVf",
+    "uploadedTo": {
+      "dappnode": "Fri, 05 Aug 2022 07:39:48 GMT"
+    }
+  },
+  "0.2.0": {
+    "hash": "/ipfs/QmeLX7iou476GQ2MVftc1m8pTqnnzZ7XCvscanF75F4eZj",
+    "uploadedTo": {
+      "dappnode": "Tue, 09 Aug 2022 18:31:13 GMT"
+    }
+  },
+  "1.88.0": {
+    "hash": "/ipfs/QmWDYy3SMd69pmMUHNFrMtnQakQvMywSyCk8pUcHtcR47u",
+    "uploadedTo": {
+      "dappnode": "Tue, 09 Aug 2022 18:40:38 GMT"
+    }
+  },
+  "1.89.5": {
+    "hash": "/ipfs/QmRSBb2beDdTtgQ3nGTfUDj1cYqt9s2YeT5SrWAE1UtMex",
+    "uploadedTo": {
+      "dappnode": "Fri, 19 Aug 2022 09:07:20 GMT"
+    }
+  },
+  "1.89.8": {
+    "hash": "/ipfs/QmQNbZQhAzeJ5yd6rD1W7XrGFTLfN44VXFq3r3t5wEYqf2",
+    "uploadedTo": {
+      "dappnode": "Thu, 25 Aug 2022 06:13:01 GMT"
+    }
+  },
+  "1.89.18": {
+    "hash": "/ipfs/QmVgZ4h1CRhrbWJ82T1hP7BbfwH48Pv5VP1dBXeieA7gFC",
+    "uploadedTo": {
+      "dappnode": "Mon, 29 Aug 2022 13:29:12 GMT"
     }
   }
 }
