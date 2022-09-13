@@ -1,11 +1,11 @@
 version: "3.5"
 services:
   node:
-    image: "node.hopr.dnp.dappnode.eth:1.89.18"
+    image: "node.hopr.dnp.dappnode.eth:1.0.0"
     build:
       context: .
       args:
-        UPSTREAM_VERSION: paleochora
+        UPSTREAM_VERSION: 1.90.8
     ports:
       - "9091:9091/tcp"
       - "9091:9091/udp"
@@ -16,8 +16,8 @@ services:
       - "db:/app/hoprd-db"
     environment:
       - DEBUG=hopr*
-      - HOPRD_ENVIRONMENT=paleochora
-      - HOPRD_HOST=0.0.0.0:9091
+      - HOPRD_ENVIRONMENT=monte_rosa
+      - "HOPRD_HOST=0.0.0.0:9091"
       - HOPRD_ANNOUNCE=false
       - HOPRD_ADMIN=true
       - HOPRD_ADMIN_HOST=0.0.0.0
@@ -30,11 +30,11 @@ services:
       - HOPRD_HEALTH_CHECK_PORT=8080
       - HOPRD_PASSWORD=open-sesame-iTwnsPNg0hpagP+o6T0KOwiH9RQ0
       - HOPRD_API_TOKEN=!5qxc9Lp1BE7IFQ-nrtttU
-      - HOPRD_IDENTITY=/app/hoprd/.hopr-identity
-      - HOPRD_DATA=/app/hoprd/data
+      - HOPRD_IDENTITY=/app/hoprd-db/.hopr-identity
+      - HOPRD_DATA=/app/hoprd-db/data
       - HOPRD_INIT=true
       - HOPRD_ALLOW_PRIVATE_NODE_CONNECTIONS=false
-      - HOPRD_PROVIDER=https://provider-proxy.hoprnet.workers.dev/xdai_mainnet
+      - "HOPRD_PROVIDER=https://provider-proxy.hoprnet.workers.dev/xdai_mainnet"
     restart: unless-stopped
 volumes:
   db: {}

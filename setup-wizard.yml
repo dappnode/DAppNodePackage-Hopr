@@ -44,7 +44,7 @@ fields:
   - id: IDENTITY
     target:
       type: fileUpload
-      path: /app/hoprd/.hopr-identity
+      path: /app/hoprd-db/.hopr-identity
       service: node
     title: Custom identity file
     required: false
