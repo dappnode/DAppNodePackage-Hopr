@@ -1,35 +1,61 @@
 {
   "name": "hopr.dnp.dappnode.eth",
-  "version": "0.1.0",
-  "upstreamVersion": "ouagadougou",
+  "version": "1.0.0",
+  "upstreamVersion": "v1.90.8",
   "description": "The HOPR protocol ensures everyone has control of their privacy, data, and identity. By running a HOPR Node, you can obtain HOPR tokens by relaying data and connect to the HOPR Network.",
   "type": "service",
   "architectures": ["linux/amd64"],
-  "author": "DAppNode Association <admin@dappnode.io> (https://github.com/dappnode)",
+  "author": "HOPR Association <admin@hoprnet.org> (https://hoprnet.org)",
   "contributors": [
     "Tropicar <tropicar@protonmail.com> (https://github.com/tropicar)"
   ],
   "mainService": "node",
   "upstreamRepo": "hoprnet/hoprnet",
   "upstreamArg": "UPSTREAM_VERSION",
-  "categories": ["Blockchain"],
+  "categories": ["Communications", "Economic incentive"],
   "links": {
     "homepage": "https://hoprnet.org/",
-    "logs": "http://hopr.dappnode:3000",
-    "healthcheck": "http://hopr.dappnode:8080/healthcheck/v1/version"
+    "ui": "http://hopr.dappnode:3000?apiEndpoint=http://hopr.dappnode:3001&apiToken=!5qxc9Lp1BE7IFQ-nrtttU",
+    "api": "http://hopr.dappnode:3001",
+    "healthcheck": "http://hopr.dappnode:8080/healthcheck/v1/version",
+    "docs": "https://docs.hoprnet.org"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dappnode/DAppNodePackage-Hopr"
+    "url": "git+https://github.com/dappnode/DAppNodePackage-Hopr"
   },
   "bugs": {
     "url": "https://github.com/dappnode/DAppNodePackage-Hopr/issues"
   },
+  "requirements": {
+    "minimumDappnodeVersion": "0.2.56"
+  },
+  "exposable": [
+    {
+      "name": "HOPR",
+      "description": "HOPR P2P port",
+      "port": 9091
+    },
+    {
+      "name": "HOPR Admin UI",
+      "description": "Port for HOPR Admin UI console",
+      "port": 3000
+    },
+    {
+      "name": "HOPR REST API",
+      "description": "Port for HOPR node REST API",
+      "port": 3001
+    }
+  ],
   "license": "GLP-3.0",
   "backup": [
     {
       "name": "db",
-      "path": "/app/hoprd-db"
+      "path": "/app/hoprd-db/data"
+    },
+    {
+      "name": "identity",
+      "path": "/app/hoprd-db/.hopr-identity"
     }
   ]
 }
