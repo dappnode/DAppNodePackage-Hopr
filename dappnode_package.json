@@ -12,7 +12,7 @@
   "mainService": "node",
   "upstreamRepo": "hoprnet/hoprnet",
   "upstreamArg": "UPSTREAM_VERSION",
-  "categories": ["Blockchain"],
+  "categories": ["Communications", "Economic incentive"],
   "links": {
     "homepage": "https://hoprnet.org/",
     "ui": "http://hopr.dappnode:3000?apiEndpoint=http://hopr.dappnode:3001&apiToken=!5qxc9Lp1BE7IFQ-nrtttU",
