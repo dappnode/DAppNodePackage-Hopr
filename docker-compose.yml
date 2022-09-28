@@ -1,7 +1,7 @@
 version: "3.5"
 services:
   node:
-    image: "node.hopr.public.dappnode.eth:1.0.0"
+    image: "node.hopr.public.dappnode.eth:1.0.1"
     build:
       context: .
       args:
@@ -39,7 +39,6 @@ services:
     deploy:
       resources:
         limits:
-          # a hoprd node should never consume more than 1GByte of memory
           memory: 1G
 volumes:
   db: {}
