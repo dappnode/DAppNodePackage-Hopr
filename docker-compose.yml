@@ -36,5 +36,10 @@ services:
       - HOPRD_ALLOW_PRIVATE_NODE_CONNECTIONS=false
       - "HOPRD_PROVIDER=https://provider-proxy.hoprnet.workers.dev/xdai_mainnet"
     restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          # a hoprd node should never consume more than 1GByte of memory
+          memory: 1G
 volumes:
   db: {}
