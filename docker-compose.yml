@@ -1,7 +1,7 @@
 version: "3.5"
 services:
   node:
-    image: "node.hopr.public.dappnode.eth:1.0.0"
+    image: "node.hopr.public.dappnode.eth:1.0.1"
     build:
       context: .
       args:
@@ -36,5 +36,9 @@ services:
       - HOPRD_ALLOW_PRIVATE_NODE_CONNECTIONS=false
       - "HOPRD_PROVIDER=https://provider-proxy.hoprnet.workers.dev/xdai_mainnet"
     restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 1G
 volumes:
   db: {}
