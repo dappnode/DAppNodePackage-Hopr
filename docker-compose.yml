@@ -1,7 +1,7 @@
 version: "3.5"
 services:
   node:
-    image: "node.hopr.public.dappnode.eth:1.0.0"
+    image: "node.hopr.dnp.dappnode.eth:1.0.1"
     build:
       context: .
       args:
@@ -9,9 +9,7 @@ services:
     ports:
       - "9091:9091/tcp"
       - "9091:9091/udp"
-      - "3000:3000"
-      - "3001:3001"
-      - "8080:8080"
+      - "3001"
     volumes:
       - "db:/app/hoprd-db"
     environment:
@@ -36,5 +34,9 @@ services:
       - HOPRD_ALLOW_PRIVATE_NODE_CONNECTIONS=false
       - "HOPRD_PROVIDER=https://provider-proxy.hoprnet.workers.dev/xdai_mainnet"
     restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 1G
 volumes:
   db: {}
