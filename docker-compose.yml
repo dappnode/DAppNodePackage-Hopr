@@ -1,11 +1,11 @@
 version: "3.5"
 services:
   node:
-    image: "node.hopr.public.dappnode.eth:1.0.1"
+    image: "node.hopr.public.dappnode.eth:1.0.2"
     build:
       context: .
       args:
-        UPSTREAM_VERSION: 1.90.40
+        UPSTREAM_VERSION: 1.90.63
     ports:
       - "9091:9091/tcp"
       - "9091:9091/udp"
@@ -37,6 +37,6 @@ services:
     deploy:
       resources:
         limits:
-          memory: 1G
+          memory: 2G
 volumes:
   db: {}
