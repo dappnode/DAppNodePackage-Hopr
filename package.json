@@ -1,0 +1,6 @@
+{
+  "name": "hopr-dappnode",
+  "repository": "https://github.com/dappnode/DAppNodePackage-Hopr",
+  "private": true,
+  "packageManager": "yarn@3.2.1"
+}
