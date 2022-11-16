@@ -1,3 +1,5 @@
 # DAppNodeSDK release directories
 /build_*/
 /build/
+/.direnv/
+/node_modules/
