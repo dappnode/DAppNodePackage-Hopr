@@ -1,7 +1,7 @@
 version: "3.5"
 services:
   node:
-    image: "node.hopr.public.dappnode.eth:1.0.6"
+    image: "node.hopr.public.dappnode.eth:1.0.7"
     build:
       context: .
       args:
@@ -17,9 +17,6 @@ services:
       - HOPRD_ENVIRONMENT=monte_rosa
       - "HOPRD_HOST=0.0.0.0:9091"
       - HOPRD_ANNOUNCE=false
-      - HOPRD_ADMIN=true
-      - HOPRD_ADMIN_HOST=0.0.0.0
-      - HOPRD_ADMIN_PORT=3000
       - HOPRD_API=true
       - HOPRD_API_HOST=0.0.0.0
       - HOPRD_API_PORT=3001
@@ -38,5 +35,14 @@ services:
       resources:
         limits:
           memory: 2G
+  admin:
+    image: "gcr.io/hoprassociation/hopr-admin:07aec21b"
+    ports:
+      - "3000"
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 256M
 volumes:
   db: {}
