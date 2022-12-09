@@ -28,5 +28,29 @@
     "uploadedTo": {
       "dappnode": "Wed, 28 Sep 2022 12:49:20 GMT"
     }
+  },
+  "1.0.4": {
+    "hash": "/ipfs/QmYYmLuxN5RpxhKEKR9Tsbh3Nn5NaJGWh2JWVrmKqubzYJ",
+    "uploadedTo": {
+      "dappnode": "Wed, 16 Nov 2022 06:28:10 GMT"
+    }
+  },
+  "1.0.5": {
+    "hash": "/ipfs/QmYwe8Ev4J9sPJ1QQ4riTmgEqUD7wogJuEJXauyy6fo2PT",
+    "uploadedTo": {
+      "dappnode": "Tue, 29 Nov 2022 13:58:43 GMT"
+    }
+  },
+  "1.0.6": {
+    "hash": "/ipfs/QmVPTtYDLKdE9SY9FjrjiG7PRDiah2w73rMJ7upCWoijgm",
+    "uploadedTo": {
+      "dappnode": "Fri, 02 Dec 2022 14:29:03 GMT"
+    }
+  },
+  "1.0.7": {
+    "hash": "/ipfs/QmVyHaWjo1Vx9HEYjHjMYpMmrWBYkMeX1RhyzP3rXZNv8n",
+    "uploadedTo": {
+      "dappnode": "Mon, 05 Dec 2022 11:28:40 GMT"
+    }
   }
 }
