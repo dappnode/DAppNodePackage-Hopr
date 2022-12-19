@@ -15,7 +15,7 @@
   "categories": ["Communications", "Economic incentive"],
   "links": {
     "homepage": "https://hoprnet.org/",
-    "ui": "http://node.hopr.public.dappnode:3000/?apiEndpoint=http://node.hopr.public.dappnode:3001&apiToken=!5qxc9Lp1BE7IFQ-nrtttU",
+    "ui": "http://node.hopr.public.dappnode:3000/?apiEndpoint=http://node.hopr.public.dappnode:3001",
     "api": "http://node.hopr.public.dappnode:3001",
     "healthcheck": "http://node.hopr.public.dappnode:8080/healthcheck/v1/version",
     
