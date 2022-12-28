@@ -5,7 +5,7 @@ services:
     build:
       context: .
       args:
-        UPSTREAM_VERSION: master-goerli
+        UPSTREAM_VERSION: 1.91.23
     ports:
       - "9091:9091/tcp"
       - "9091:9091/udp"
@@ -14,7 +14,7 @@ services:
       - "db:/app/hoprd-db"
     environment:
       - DEBUG=hopr*
-      - HOPRD_ENVIRONMENT=master-goerli
+      - HOPRD_ENVIRONMENT=monte_rosa
       - "HOPRD_HOST=0.0.0.0:9091"
       - HOPRD_ANNOUNCE=false
       - HOPRD_API=true
@@ -30,7 +30,7 @@ services:
       - HOPRD_DATA=/app/hoprd-db/data
       - HOPRD_INIT=true
       - HOPRD_ALLOW_PRIVATE_NODE_CONNECTIONS=false
-      - "HOPRD_PROVIDER=https://provider-proxy.hoprnet.workers.dev/eth_goerli"
+      - "HOPRD_PROVIDER=https://provider-proxy.hoprnet.workers.dev/xdai_mainnet"
     restart: unless-stopped
     deploy:
       resources:
