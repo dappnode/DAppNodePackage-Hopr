@@ -5,7 +5,7 @@ services:
     build:
       context: .
       args:
-        UPSTREAM_VERSION: 1.91.23
+        UPSTREAM_VERSION: master-goerli
     ports:
       - "9091:9091/tcp"
       - "9091:9091/udp"
@@ -14,7 +14,7 @@ services:
       - "db:/app/hoprd-db"
     environment:
       - DEBUG=hopr*
-      - HOPRD_ENVIRONMENT=monte_rosa
+      - HOPRD_ENVIRONMENT=master-goerli
       - "HOPRD_HOST=0.0.0.0:9091"
       - HOPRD_ANNOUNCE=false
       - HOPRD_ADMIN=true
@@ -28,11 +28,12 @@ services:
       - HOPRD_HEALTH_CHECK_PORT=8080
       - HOPRD_PASSWORD=open-sesame-iTwnsPNg0hpagP+o6T0KOwiH9RQ0
       - HOPRD_DISABLE_API_AUTHENTICATION=true
+      - HOPRD_API_TOKEN=VhKw4qZdmmk3cuNpuM
       - HOPRD_IDENTITY=/app/hoprd-db/.hopr-identity
       - HOPRD_DATA=/app/hoprd-db/data
       - HOPRD_INIT=true
       - HOPRD_ALLOW_PRIVATE_NODE_CONNECTIONS=false
-      - "HOPRD_PROVIDER=https://provider-proxy.hoprnet.workers.dev/xdai_mainnet"
+      - "HOPRD_PROVIDER=https://provider-proxy.hoprnet.workers.dev/eth_goerli"
     restart: unless-stopped
     deploy:
       resources:
