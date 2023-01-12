@@ -1,12 +1,12 @@
 {
   "name": "hopr.public.dappnode.eth",
-  "version": "1.0.4",
-  "upstreamVersion": "v1.90.69",
+  "version": "1.1.0",
+  "upstreamVersion": "v1.91.24",
   "description": "The HOPR protocol ensures everyone has control of their privacy, data, and identity. By running a HOPR Node, you can obtain HOPR tokens by relaying data and connect to the HOPR Network.",
   "type": "service",
   "architectures": ["linux/amd64"],
   "mainService": "node",
-  "author": "HOPR Association <admin@hoprnet.org> (https://hoprnet.org)",
+  "author": "HOPR Association <tech@hoprnet.org> (https://hoprnet.org)",
   "contributors": [
     "Tropicar <tropicar@protonmail.com> (https://github.com/tropicar)"
   ],
@@ -15,7 +15,7 @@
   "categories": ["Communications", "Economic incentive"],
   "links": {
     "homepage": "https://hoprnet.org/",
-    "ui": "http://node.hopr.public.dappnode:3000/?apiEndpoint=http://node.hopr.public.dappnode:3001&apiToken=!5qxc9Lp1BE7IFQ-nrtttU",
+    "ui": "http://node.hopr.public.dappnode:3000/?apiEndpoint=http://node.hopr.public.dappnode:3001",
     "api": "http://node.hopr.public.dappnode:3001",
     "healthcheck": "http://node.hopr.public.dappnode:8080/healthcheck/v1/version",
     
