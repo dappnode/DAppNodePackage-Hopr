@@ -37,7 +37,7 @@ services:
         limits:
           memory: 2G
   admin:
-    image: "gcr.io/hoprassociation/hopr-admin:07aec21b"
+    image: "gcr.io/hoprassociation/hopr-admin:latest"
     ports:
       - "3000"
     restart: unless-stopped
