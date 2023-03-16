@@ -1,6 +1,6 @@
 {
   "name": "hopr.public.dappnode.eth",
-  "version": "1.0.8",
+  "version": "1.0.7",
   "upstreamVersion": "v1.92.12",
   "description": "The HOPR protocol ensures everyone has control of their privacy, data, and identity. By running a HOPR Node, you can obtain HOPR tokens by relaying data and connect to the HOPR Network.",
   "type": "service",
