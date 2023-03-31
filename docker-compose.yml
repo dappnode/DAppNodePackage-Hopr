@@ -1,11 +1,11 @@
 version: "3.5"
 services:
   node:
-    image: "node.hopr.public.dappnode.eth:1.0.7"
+    image: "node.hopr.public.dappnode.eth:1.0.8"
     build:
       context: .
       args:
-        UPSTREAM_VERSION: 1.92.12
+        UPSTREAM_VERSION: 1.93.0
     ports:
       - "9091:9091/tcp"
       - "9091:9091/udp"
@@ -37,7 +37,7 @@ services:
         limits:
           memory: 2G
   admin:
-    image: "gcr.io/hoprassociation/hopr-admin:riga"
+    image: "gcr.io/hoprassociation/hopr-admin:bratislava"
     ports:
       - "3000"
     restart: unless-stopped
