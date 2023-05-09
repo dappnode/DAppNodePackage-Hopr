@@ -29,10 +29,7 @@
   "panels": [
     {
       "collapsed": false,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
+      "datasource": null,
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -43,10 +40,7 @@
       "panels": [],
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
+          "datasource": null,
           "refId": "A"
         }
       ],
@@ -54,10 +48,7 @@
       "type": "row"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
+      "datasource": null,
       "description": "The number of high & low-quality peers your node is connected to.",
       "fieldConfig": {
         "defaults": {
@@ -132,10 +123,7 @@
       },
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
+          "datasource": null,
           "exemplar": true,
           "expr": "sum by(quality) (core_mgauge_peers_by_quality)",
           "interval": "",
@@ -143,10 +131,7 @@
           "refId": "A"
         },
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
+          "datasource": null,
           "exemplar": true,
           "expr": "core_gauge_num_peers",
           "hide": false,
@@ -159,10 +144,7 @@
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
+      "datasource": null,
       "description": "Connections to and from public relay nodes.",
       "fieldConfig": {
         "defaults": {
@@ -237,10 +219,7 @@
       },
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
+          "datasource": null,
           "exemplar": true,
           "expr": "connect_gauge_relayed_conns",
           "interval": "",
@@ -248,10 +227,7 @@
           "refId": "A"
         },
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
+          "datasource": null,
           "editorMode": "code",
           "exemplar": true,
           "expr": "connect_gauge_conns_to_relays",
@@ -266,10 +242,7 @@
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
+      "datasource": null,
       "description": "",
       "gridPos": {
         "h": 4,
@@ -293,10 +266,7 @@
       "type": "text"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
+      "datasource": null,
       "description": "",
       "gridPos": {
         "h": 4,
@@ -320,10 +290,7 @@
       "type": "text"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
+      "datasource": null,
       "description": "History of your node’s connectivity status.",
       "fieldConfig": {
         "defaults": {
@@ -403,10 +370,7 @@
       },
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
+          "datasource": null,
           "exemplar": true,
           "expr": "core_gauge_network_health",
           "interval": "",
@@ -418,10 +382,7 @@
       "type": "state-timeline"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
+      "datasource": null,
       "description": "The number of successful and unsuccessful pings your node sends per second.",
       "fieldConfig": {
         "defaults": {
@@ -524,10 +485,7 @@
       },
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
+          "datasource": null,
           "exemplar": true,
           "expr": "rate(core_counter_heartbeat_successful_pings[$__rate_interval])",
           "interval": "",
@@ -535,10 +493,7 @@
           "refId": "A"
         },
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
+          "datasource": null,
           "exemplar": true,
           "expr": "rate(core_counter_heartbeat_failed_pings[$__rate_interval])",
           "hide": false,
@@ -551,10 +506,7 @@
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
+      "datasource": null,
       "description": "",
       "gridPos": {
         "h": 5,
@@ -578,10 +530,7 @@
       "type": "text"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
+      "datasource": null,
       "description": "",
       "gridPos": {
         "h": 5,
@@ -605,10 +554,7 @@
       "type": "text"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
+      "datasource": null,
       "description": "The time it takes your node to complete a heartbeat probing cycle.",
       "fieldConfig": {
         "defaults": {
@@ -645,7 +591,9 @@
         "minVizWidth": 0,
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -655,10 +603,7 @@
       "pluginVersion": "9.3.2",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
+          "datasource": null,
           "editorMode": "code",
           "exemplar": false,
           "expr": "100 * core_histogram_heartbeat_time_seconds_bucket / scalar(core_histogram_heartbeat_time_seconds_count)",
@@ -674,10 +619,7 @@
       "type": "bargauge"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
+      "datasource": null,
       "description": "Response time for pings sent by your node in seconds.",
       "fieldConfig": {
         "defaults": {
@@ -714,7 +656,9 @@
         "minVizWidth": 0,
         "orientation": "horizontal",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -724,10 +668,7 @@
       "pluginVersion": "9.3.2",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
+          "datasource": null,
           "editorMode": "code",
           "exemplar": false,
           "expr": "100 * core_histogram_ping_time_seconds_bucket / scalar(core_histogram_ping_time_seconds_count)",
@@ -743,10 +684,7 @@
       "type": "bargauge"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
+      "datasource": null,
       "description": "",
       "gridPos": {
         "h": 3,
@@ -770,10 +708,7 @@
       "type": "text"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
+      "datasource": null,
       "description": "",
       "gridPos": {
         "h": 3,
@@ -798,10 +733,7 @@
     },
     {
       "collapsed": false,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
+      "datasource": null,
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -812,10 +744,7 @@
       "panels": [],
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
+          "datasource": null,
           "refId": "A"
         }
       ],
@@ -823,10 +752,7 @@
       "type": "row"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
+      "datasource": null,
       "description": "Basic statistics on sent/received/forwarded HOPR messages by this node.",
       "fieldConfig": {
         "defaults": {
@@ -859,7 +785,9 @@
         "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -869,10 +797,7 @@
       "pluginVersion": "9.3.2",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
+          "datasource": null,
           "exemplar": true,
           "expr": "core_counter_sent_messages",
           "interval": "",
@@ -880,10 +805,7 @@
           "refId": "A"
         },
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
+          "datasource": null,
           "exemplar": true,
           "expr": "core_counter_received_messages",
           "hide": false,
@@ -892,10 +814,7 @@
           "refId": "B"
         },
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
+          "datasource": null,
           "exemplar": true,
           "expr": "core_counter_forwarded_messages",
           "hide": false,
@@ -908,10 +827,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
+      "datasource": null,
       "description": "Numbers of incoming/outgoing payment channels",
       "fieldConfig": {
         "defaults": {
@@ -948,7 +864,9 @@
         "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -958,10 +876,7 @@
       "pluginVersion": "9.3.2",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
+          "datasource": null,
           "exemplar": true,
           "expr": "core_gauge_num_incoming_channels",
           "interval": "",
@@ -969,10 +884,7 @@
           "refId": "A"
         },
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
+          "datasource": null,
           "exemplar": true,
           "expr": "core_gauge_num_outgoing_channels",
           "hide": false,
@@ -985,10 +897,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
+      "datasource": null,
       "description": "Rate of messages per hour .",
       "fieldConfig": {
         "defaults": {
@@ -1106,10 +1015,7 @@
       },
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
+          "datasource": null,
           "exemplar": true,
           "expr": "rate(core_counter_received_messages[1h])",
           "interval": "",
@@ -1117,10 +1023,7 @@
           "refId": "A"
         },
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
+          "datasource": null,
           "exemplar": true,
           "expr": "rate(core_counter_sent_messages[1h])",
           "hide": false,
@@ -1129,10 +1032,7 @@
           "refId": "B"
         },
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
+          "datasource": null,
           "exemplar": true,
           "expr": "rate(core_counter_forwarded_messages[1h])",
           "hide": false,
@@ -1145,10 +1045,7 @@
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
+      "datasource": null,
       "description": "Number of winning/losing tickets.",
       "fieldConfig": {
         "defaults": {
@@ -1181,7 +1078,9 @@
         "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -1191,10 +1090,7 @@
       "pluginVersion": "9.3.2",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
+          "datasource": null,
           "exemplar": true,
           "expr": "core_counter_winning_tickets",
           "interval": "",
@@ -1202,10 +1098,7 @@
           "refId": "A"
         },
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
+          "datasource": null,
           "exemplar": true,
           "expr": "core_counter_losing_tickets",
           "hide": false,
@@ -1218,10 +1111,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
+      "datasource": null,
       "description": "The current size of the mixer packet queue.",
       "fieldConfig": {
         "defaults": {
@@ -1302,10 +1192,7 @@
       },
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
+          "datasource": null,
           "editorMode": "builder",
           "expr": "core_gauge_mixer_queue_size",
           "legendFormat": "__auto",
@@ -1317,10 +1204,7 @@
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
+      "datasource": null,
       "description": "Average packet delay through the mixer.",
       "fieldConfig": {
         "defaults": {
@@ -1355,7 +1239,9 @@
         "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -1364,10 +1250,7 @@
       "pluginVersion": "9.3.2",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
+          "datasource": null,
           "editorMode": "builder",
           "expr": "core_gauge_mixer_average_packet_delay",
           "legendFormat": "__auto",
@@ -1380,10 +1263,7 @@
     },
     {
       "collapsed": false,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
+      "datasource": null,
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -1394,10 +1274,7 @@
       "panels": [],
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
+          "datasource": null,
           "refId": "A"
         }
       ],
@@ -1405,10 +1282,7 @@
       "type": "row"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
+      "datasource": null,
       "description": "Amount of heap used by V8 engine in Node.js runtime.",
       "fieldConfig": {
         "defaults": {
@@ -1484,10 +1358,7 @@
       },
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
+          "datasource": null,
           "exemplar": true,
           "expr": "hoprd_gauge_nodejs_total_used_heap_bytes",
           "interval": "",
@@ -1495,10 +1366,7 @@
           "refId": "A"
         },
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
+          "datasource": null,
           "exemplar": true,
           "expr": "avg_over_time(hoprd_gauge_nodejs_total_used_heap_bytes[1h])",
           "hide": false,
@@ -1511,10 +1379,7 @@
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
+      "datasource": null,
       "description": "Number of times the node has restarted (either on user's request or due to error).",
       "fieldConfig": {
         "defaults": {
@@ -1548,7 +1413,9 @@
       "options": {
         "orientation": "auto",
         "reduceOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "fields": "",
           "values": false
         },
@@ -1559,10 +1426,7 @@
       "pluginVersion": "9.3.2",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
+          "datasource": null,
           "exemplar": true,
           "expr": "changes(hoprd_gauge_startup_unix_time_seconds[$__range])",
           "interval": "",
@@ -1574,10 +1438,7 @@
       "type": "gauge"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
+      "datasource": null,
       "description": "Total amount of heap available for V8 engine in Node.js runtime.",
       "fieldConfig": {
         "defaults": {
@@ -1649,10 +1510,7 @@
       },
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
+          "datasource": null,
           "exemplar": true,
           "expr": "hoprd_gauge_nodejs_total_available_heap_bytes",
           "interval": "",
@@ -1660,10 +1518,7 @@
           "refId": "A"
         },
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
+          "datasource": null,
           "exemplar": true,
           "expr": "avg_over_time(hoprd_gauge_nodejs_total_available_heap_bytes[1h])",
           "hide": false,
@@ -1676,10 +1531,7 @@
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
+      "datasource": null,
       "description": "Timestamped view of node startups and restarts.",
       "fieldConfig": {
         "defaults": {
@@ -1751,7 +1603,9 @@
       "id": 34,
       "options": {
         "legend": {
-          "calcs": ["changeCount"],
+          "calcs": [
+            "changeCount"
+          ],
           "displayMode": "list",
           "placement": "bottom",
           "showLegend": true
@@ -1763,10 +1617,7 @@
       },
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
+          "datasource": null,
           "editorMode": "code",
           "exemplar": true,
           "expr": "hoprd_gauge_startup_unix_time_seconds",
@@ -1781,7 +1632,7 @@
     }
   ],
   "refresh": "5s",
-  "schemaVersion": 37,
+  "schemaVersion": 38,
   "style": "dark",
   "tags": [],
   "templating": {
@@ -1794,7 +1645,7 @@
   "timepicker": {},
   "timezone": "",
   "title": "HOPR Node Overview",
-  "uid": "8KfdzTpVz",
+  "uid": "hopr-public-8KfdzTpVz",
   "version": 3,
   "weekStart": ""
 }

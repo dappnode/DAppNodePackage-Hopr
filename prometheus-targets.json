@@ -1,11 +1,12 @@
-[ 
-	{
-	       	"labels": 
-		{ 
-			"package": "hopr.public.dappnode.eth",
-		       	"service": "node.hopr.dappnode",
-		       	"__metrics_path__": "/api/v2/node/metrics"
-	       	},
-	       	"targets": [ "node.hopr.public.dappnode:3001" ] 
-	}
+[
+  {
+    "labels": {
+      "package": "hopr.public.dappnode.eth",
+      "service": "node.hopr.dappnode",
+      "__metrics_path__": "/api/v2/node/metrics"
+    },
+    "targets": [
+      "node.hopr.public.dappnode:3001"
+    ]
+  }
 ]
