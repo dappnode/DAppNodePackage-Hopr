@@ -1,6 +1,5 @@
 version: "2"
 fields:
-  
   - id: HOPRD_PASSWORD
     target:
       type: environment
@@ -10,7 +9,6 @@ fields:
     required: true
     description: It's the password which will be used to encrypt the database.
     secret: true
-  
   - id: HOPRD_API_TOKEN
     target:
       type: environment
@@ -20,7 +18,6 @@ fields:
     required: false
     description: It's the password which will be used to access to the logs
     secret: true
-  
   - id: HOPRD_PROVIDER
     target:
       type: environment
@@ -30,17 +27,15 @@ fields:
     required: false
     description: Optional URL to the custom RPC provider this HOPR node should use.
     secret: false
-
-  - id: HOPRD_ENVIRONMENT
+  - id: HOPRD_NETWORK
     target:
-      type: environment
-      name: HOPRD_ENVIRONMENT
+      type: network
+      name: HOPRD_NETWORK
       service: node
-    title: HOPR network environment
+    title: HOPR network name
     required: false
     description: Optional network environment this HOPR node should use.
     secret: false
-  
   - id: IDENTITY
     target:
       type: fileUpload
@@ -49,4 +44,31 @@ fields:
     title: Custom identity file
     required: false
     description: Upload custom identity file of a previously deployed HOPR node.
+    secret: false
+  - id: HOPRD_SAFE_ADDRESS
+    target:
+      type: environment
+      name: HOPRD_SAFE_ADDRESS
+      service: node
+    title: Staking safe address
+    required: false
+    description: Ethereum address of the associated staking safe
+    secret: false
+  - id: HOPRD_MODULE_ADDRESS
+    target:
+      type: environment
+      name: HOPRD_MODULE_ADDRESS
+      service: node
+    title: Staking safe module address
+    required: false
+    description: Ethereum address of the module connectedd to the associated staking safe
+    secret: false
+  - id: HOPRD_HOST
+    target:
+      type: environment
+      name: HOPRD_HOST
+      service: node
+    title: Host IP/Port mapping
+    required: true
+    description: Mapping of the public ip and p2p port
     secret: false

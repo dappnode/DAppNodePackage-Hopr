@@ -1,11 +1,11 @@
 version: "3.5"
 services:
   node:
-    image: "node.hopr.public.dappnode.eth:1.0.10"
+    image: "node.hopr.public.dappnode.eth:2.0.0"
     build:
       context: .
       args:
-        UPSTREAM_VERSION: 1.93.7
+        UPSTREAM_VERSION: providence
     ports:
       - "9091:9091/tcp"
       - "9091:9091/udp"
@@ -14,16 +14,13 @@ services:
       - "db:/app/hoprd-db"
     environment:
       - DEBUG=hopr*
-      - HOPRD_ENVIRONMENT=monte_rosa
-      - "HOPRD_HOST=0.0.0.0:9091"
-      - HOPRD_ANNOUNCE=false
+      - HOPRD_ANNOUNCE=true
       - HOPRD_API=true
       - HOPRD_API_HOST=0.0.0.0
       - HOPRD_API_PORT=3001
       - HOPRD_HEALTH_CHECK=true
       - HOPRD_HEALTH_CHECK_HOST=0.0.0.0
       - HOPRD_HEALTH_CHECK_PORT=8080
-      - HOPRD_PASSWORD=open-sesame-iTwnsPNg0hpagP+o6T0KOwiH9RQ0
       - HOPRD_API_TOKEN=!5qxc9Lp1BE7IFQ-nrtttU
       - HOPRD_DISABLE_API_AUTHENTICATION=true
       - HOPRD_IDENTITY=/app/hoprd-db/.hopr-identity
@@ -32,20 +29,23 @@ services:
       - HOPRD_ALLOW_PRIVATE_NODE_CONNECTIONS=false
       - HOPRD_HEARTBEAT_THRESHOLD=60000
       - HOPRD_HEARTBEAT_INTERVAL=20000
-      - "HOPRD_PROVIDER=https://provider-proxy.hoprnet.workers.dev/xdai_mainnet"
     restart: unless-stopped
     deploy:
       resources:
         limits:
           memory: 2G
   admin:
-    image: "gcr.io/hoprassociation/hopr-admin:bratislava"
+    image: hopr-admin
+    build:
+      context: https://github.com/hoprnet/hopr-admin.git#f15eaaf2031b061b6eb304b8a5c4ec36df603827:.
+      dockerfile: scripts/NodeAdmin.Dockerfile
     ports:
-      - "3000"
+      - "3000:80"
     restart: unless-stopped
     deploy:
       resources:
         limits:
           memory: 256M
+
 volumes:
   db: {}
