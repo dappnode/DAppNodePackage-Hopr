@@ -26,9 +26,15 @@ services:
       - HOPRD_IDENTITY=/app/hoprd-db/.hopr-identity
       - HOPRD_DATA=/app/hoprd-db/data
       - HOPRD_INIT=true
+      - HOPRD_HOST=127.0.0.1:9091
+      - HOPRD_SAFE_ADDRESS=0x
+      - HOPRD_MODULE_ADDRESS=0x
       - HOPRD_ALLOW_PRIVATE_NODE_CONNECTIONS=false
       - HOPRD_HEARTBEAT_THRESHOLD=60000
       - HOPRD_HEARTBEAT_INTERVAL=20000
+	# keep the value, it gets immediately overwritten automatically during setup 
+      - HOPRD_PASSWORD=open-sesame-iTwnsPNg0hpagP+o6T0KOwiH9RQ0
+      - "HOPRD_PROVIDER=https://provider-proxy.hoprnet.workers.dev/xdai_mainnet"
     restart: unless-stopped
     deploy:
       resources:
