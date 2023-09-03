@@ -29,7 +29,7 @@ fields:
     secret: false
   - id: HOPRD_NETWORK
     target:
-      type: network
+      type: environment
       name: HOPRD_NETWORK
       service: node
     title: HOPR network name
