@@ -51,7 +51,7 @@ fields:
       name: HOPRD_SAFE_ADDRESS
       service: node
     title: Staking safe address
-    required: false
+    required: true
     description: Ethereum address of the associated staking safe
     secret: false
   - id: HOPRD_MODULE_ADDRESS
@@ -60,7 +60,7 @@ fields:
       name: HOPRD_MODULE_ADDRESS
       service: node
     title: Staking safe module address
-    required: false
+    required: true
     description: Ethereum address of the module connectedd to the associated staking safe
     secret: false
   - id: HOPRD_HOST
