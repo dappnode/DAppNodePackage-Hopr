@@ -16,6 +16,7 @@ services:
       - DEBUG=hopr*
       - HOPRD_ANNOUNCE=true
       - HOPRD_NETWORK=dufour
+      - "HOPRD_PASSWORD=open-sesame-iTwnsPNg0hpagP+o6T0KOwiH9RQ0"
       - HOPRD_API=true
       - HOPRD_API_HOST=0.0.0.0
       - HOPRD_API_PORT=3001
