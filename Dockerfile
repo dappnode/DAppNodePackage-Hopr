@@ -1,5 +1,7 @@
 ARG UPSTREAM_VERSION
-FROM gcr.io/hoprassociation/hoprd:${UPSTREAM_VERSION}
+FROM europe-west3-docker.pkg.dev/hoprassociation/docker-images/hoprd:${UPSTREAM_VERSION}
 
-ENV AVADO=true
-ENTRYPOINT ["/usr/bin/tini", "--", "node", "--experimental-wasm-reftypes", "./lib/main.cjs"]
+# not used at the moment, but might be useful in the future
+ENV DAPPNODE=true
+
+ENTRYPOINT ["/usr/bin/tini", "--", "node", "./lib/main.cjs"]
