@@ -1,7 +1,7 @@
 version: "3.5"
 services:
   node:
-    image: "node.hopr.public.dappnode.eth:2.0.0"
+    image: "node.hopr.public.dappnode.eth:1.0.12"
     build:
       context: .
       args:
@@ -15,6 +15,7 @@ services:
     environment:
       - DEBUG=hopr*
       - HOPRD_ANNOUNCE=true
+      - HOPRD_NETWORK=dufour
       - HOPRD_API=true
       - HOPRD_API_HOST=0.0.0.0
       - HOPRD_API_PORT=3001
@@ -29,6 +30,7 @@ services:
       - HOPRD_ALLOW_PRIVATE_NODE_CONNECTIONS=false
       - HOPRD_HEARTBEAT_THRESHOLD=60000
       - HOPRD_HEARTBEAT_INTERVAL=20000
+      - "HOPRD_PROVIDER=https://provider-proxy.hoprnet.workers.dev/xdai_mainnet"
     restart: unless-stopped
     deploy:
       resources:
