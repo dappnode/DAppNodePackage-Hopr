@@ -6,7 +6,7 @@ services:
       context: .
       args:
         UPSTREAM_VERSION: >-
-          providence@sha256:003d145ddd524264757d6f6f827f5fd3d34be07912372305d49ce264cd6b720d
+          2.0.0-rc.4@sha256:32730c4391338f274a199cbb1e02b824c2e64334153c4a57e11835c86eb2d2c3
     ports:
       - "9091:9091/tcp"
       - "9091:9091/udp"
