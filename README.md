@@ -6,3 +6,8 @@ This is the DAppNode package for HOPR. You can download this to install the HOPR
 
 To install HOPR follow the instructions [here.](https://docs.hoprnet.org/node/using-dappnode) 
 
+## Versions
+
+Hopr Admin: v0.6.0
+
+Hoprd: v2.0.0-rc.3
