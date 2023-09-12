@@ -5,7 +5,8 @@ services:
     build:
       context: .
       args:
-        UPSTREAM_VERSION: providence
+        UPSTREAM_VERSION: >-
+          providence@sha256:003d145ddd524264757d6f6f827f5fd3d34be07912372305d49ce264cd6b720d
     ports:
       - "9091:9091/tcp"
       - "9091:9091/udp"
@@ -27,13 +28,13 @@ services:
       - HOPRD_IDENTITY=/app/hoprd-db/.hopr-identity
       - HOPRD_DATA=/app/hoprd-db/data
       - HOPRD_INIT=true
-      - HOPRD_HOST=127.0.0.1:9091
+      - "HOPRD_HOST=127.0.0.1:9091"
       - HOPRD_SAFE_ADDRESS=0x
       - HOPRD_MODULE_ADDRESS=0x
       - HOPRD_ALLOW_PRIVATE_NODE_CONNECTIONS=false
       - HOPRD_HEARTBEAT_THRESHOLD=60000
       - HOPRD_HEARTBEAT_INTERVAL=20000
-      - HOPRD_PASSWORD="open-sesame-iTwnsPNg0hpagP+o6T0KOwiH9RQ0" # keep the value, it gets immediately overwritten automatically during setup
+      - HOPRD_PASSWORD="open-sesame-iTwnsPNg0hpagP+o6T0KOwiH9RQ0"
       - "HOPRD_PROVIDER=https://provider-proxy.hoprnet.workers.dev/xdai_mainnet"
     restart: unless-stopped
     deploy:
@@ -41,7 +42,8 @@ services:
         limits:
           memory: 2G
   admin:
-    image: europe-west3-docker.pkg.dev/hoprassociation/docker-images/hopr-admin:latest
+    image: >-
+      europe-west3-docker.pkg.dev/hoprassociation/docker-images/hopr-admin:202ec0ae237a@sha256:202ec0ae237a1cf10728a82627253b4c4ba5755847d14f1c4a40ad6a8e820706
     ports:
       - "3000:80"
     restart: unless-stopped
@@ -49,6 +51,5 @@ services:
       resources:
         limits:
           memory: 256M
-
 volumes:
   db: {}
