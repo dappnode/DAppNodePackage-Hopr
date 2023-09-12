@@ -33,7 +33,7 @@ services:
       - HOPRD_ALLOW_PRIVATE_NODE_CONNECTIONS=false
       - HOPRD_HEARTBEAT_THRESHOLD=60000
       - HOPRD_HEARTBEAT_INTERVAL=20000
-      - HOPRD_PASSWORD="open-sesame-iTwnsPNg0hpagP+o6T0KOwiH9RQ0" # keep the value, it gets immediately overwritten automatically during setup 
+      - HOPRD_PASSWORD="open-sesame-iTwnsPNg0hpagP+o6T0KOwiH9RQ0" # keep the value, it gets immediately overwritten automatically during setup
       - "HOPRD_PROVIDER=https://provider-proxy.hoprnet.workers.dev/xdai_mainnet"
     restart: unless-stopped
     deploy:
@@ -41,10 +41,7 @@ services:
         limits:
           memory: 2G
   admin:
-    image: hopr-admin
-    build:
-      context: https://github.com/hoprnet/hopr-admin.git#f15eaaf2031b061b6eb304b8a5c4ec36df603827:.
-      dockerfile: scripts/NodeAdmin.Dockerfile
+    image: europe-west3-docker.pkg.dev/hoprassociation/docker-images/hopr-admin:latest
     ports:
       - "3000:80"
     restart: unless-stopped
