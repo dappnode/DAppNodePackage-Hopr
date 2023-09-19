@@ -6,7 +6,7 @@ services:
       context: .
       args:
         UPSTREAM_VERSION: >-
-          2.0.0-rc.4@sha256:32730c4391338f274a199cbb1e02b824c2e64334153c4a57e11835c86eb2d2c3
+          2.0.0-rc.5-pr.5511@sha256:f1316e2d9986280b05010611a085ffbccbd079ad6248dda55e6a74dec84666a5
     ports:
       - "9091:9091/tcp"
       - "9091:9091/udp"
@@ -28,10 +28,9 @@ services:
       - HOPRD_IDENTITY=/app/hoprd-db/.hopr-identity
       - HOPRD_DATA=/app/hoprd-db/data
       - HOPRD_INIT=true
-      - "HOPRD_HOST=127.0.0.1:9091"
+      - HOPRD_HOST=127.0.0.1:9091
       - HOPRD_SAFE_ADDRESS=0x
       - HOPRD_MODULE_ADDRESS=0x
-      - HOPRD_ALLOW_PRIVATE_NODE_CONNECTIONS=false
       - HOPRD_HEARTBEAT_THRESHOLD=60000
       - HOPRD_HEARTBEAT_INTERVAL=20000
       - HOPRD_PASSWORD="open-sesame-iTwnsPNg0hpagP+o6T0KOwiH9RQ0"
@@ -43,7 +42,7 @@ services:
           memory: 2G
   admin:
     image: >-
-      europe-west3-docker.pkg.dev/hoprassociation/docker-images/hopr-admin:202ec0ae237a@sha256:202ec0ae237a1cf10728a82627253b4c4ba5755847d14f1c4a40ad6a8e820706
+      europe-west3-docker.pkg.dev/hoprassociation/docker-images/hopr-admin:2141c93380780@sha256:2141c93380780843aecb48f0947dea1002930d307319476b93f185800e6c759e
     ports:
       - "3000:80"
     restart: unless-stopped
