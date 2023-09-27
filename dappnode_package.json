@@ -62,5 +62,11 @@
       "name": "identity",
       "path": "/app/hoprd-db/.hopr-identity"
     }
+  ],
+  "globalEnvs": [
+    {
+      "envs": ["DOMAIN"],
+      "services": ["node"]
+    }
   ]
 }
