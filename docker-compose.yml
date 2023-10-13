@@ -1,12 +1,12 @@
 version: "3.5"
 services:
   node:
-    image: "node.hopr.public.dappnode.eth:1.0.14"
+    image: "node.hopr.public.dappnode.eth:1.0.15"
     build:
       context: .
       args:
         UPSTREAM_VERSION: >-
-          2.0.0-rc.7@sha256:4035a241963820df01dd72fb85b2139cd60eeeedb9bb2b28ee3541d44593848b
+          2.0.0-rc.9@sha256:24769813f5383b7288e98c13f3db0ca039c703ec9d21132f4174ac4fb48a043b
     ports:
       - "9091:9091/tcp"
       - "9091:9091/udp"
@@ -41,7 +41,7 @@ services:
         limits:
           memory: 2G
   admin:
-    image: "europe-west3-docker.pkg.dev/hoprassociation/docker-images/hopr-admin:2141c93380780@sha256:2141c93380780843aecb48f0947dea1002930d307319476b93f185800e6c759e"
+    image: "europe-west3-docker.pkg.dev/hoprassociation/docker-images/hopr-admin@sha256:980aa8d08b9c9b7fe83079cc13353562e3bccde58051b2ab00c735e7d7e066d5"
     ports:
       - "3000:80"
     restart: unless-stopped

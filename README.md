@@ -8,6 +8,6 @@ To install HOPR follow the instructions [here.](https://docs.hoprnet.org/node/us
 
 ## Versions
 
-Hopr Admin: v0.6.4
+Hopr Admin: v0.6.5
 
-Hoprd: v2.0.0-rc.7
+Hoprd: v2.0.0-rc.9
