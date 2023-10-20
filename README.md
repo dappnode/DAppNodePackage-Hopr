@@ -10,4 +10,4 @@ To install HOPR follow the instructions [here.](https://docs.hoprnet.org/node/us
 
 Hopr Admin: v0.6.5
 
-Hoprd: v2.0.0-rc.9
+Hoprd: v2.0.0-rc.10

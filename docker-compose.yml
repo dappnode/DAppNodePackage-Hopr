@@ -6,7 +6,7 @@ services:
       context: .
       args:
         UPSTREAM_VERSION: >-
-          2.0.0-rc.9@sha256:24769813f5383b7288e98c13f3db0ca039c703ec9d21132f4174ac4fb48a043b
+          2.0.0-rc.10@sha256:8bb957d806ad3d28761f7a32519b45cfcece144ef1dee78f1ba16ea354cd98ec
     ports:
       - "9091:9091/tcp"
       - "9091:9091/udp"
