@@ -1,7 +1,7 @@
 version: "3.5"
 services:
   node:
-    image: "node.hopr.public.dappnode.eth:1.0.26"
+    image: "node.hopr.public.dappnode.eth:1.0.27"
     build:
       context: .
       args:
@@ -38,7 +38,7 @@ services:
     deploy:
       resources:
         limits:
-          memory: 2G
+          memory: 3G
   admin:
     image: "europe-west3-docker.pkg.dev/hoprassociation/docker-images/hopr-admin@sha256:b354b698ece88155607fcc0d325e57786ce0e15bb9d40dc180826ac3c1000c13"
     ports:
