@@ -5,25 +5,23 @@ services:
     build:
       context: .
       args:
-        # FIXME: set to specific version before merge
-        UPSTREAM_VERSION: "latest"
+        UPSTREAM_VERSION: latest
     ports:
       - "9091:9091/tcp"
       - "9091:9091/udp"
       - "3001"
     volumes:
       - "data:/app/data"
-      - "./hoprd.cfg.yaml:/app/hoprd.cfg.yaml"
     environment:
-      - "RUST_LOG=info"
-      - "HOPRD_NETWORK=dufour"
+      - RUST_LOG=info
+      - HOPRD_NETWORK=dufour
       - "HOPRD_HOST=127.0.0.1:9091"
-      - "HOPRD_SAFE_ADDRESS=0x"
-      - "HOPRD_MODULE_ADDRESS=0x"
-      - "HOPRD_HEARTBEAT_THRESHOLD=60"
-      - "HOPRD_HEARTBEAT_INTERVAL=20"
-      - "HOPRD_HEARTBEAT_VARIANCE=1"
-      - "HOPRD_PASSWORD=open-sesame-iTwnsPNg0hpagP+o6T0KOwiH9RQ0"
+      - HOPRD_SAFE_ADDRESS=0x
+      - HOPRD_MODULE_ADDRESS=0x
+      - HOPRD_HEARTBEAT_THRESHOLD=60
+      - HOPRD_HEARTBEAT_INTERVAL=20
+      - HOPRD_HEARTBEAT_VARIANCE=1
+      - HOPRD_PASSWORD=open-sesame-iTwnsPNg0hpagP+o6T0KOwiH9RQ0
       - "HOPRD_PROVIDER=https://provider-proxy.hoprnet.workers.dev/xdai_mainnet"
     restart: unless-stopped
     deploy:
@@ -31,7 +29,8 @@ services:
         limits:
           memory: 2G
   admin:
-    image: "europe-west3-docker.pkg.dev/hoprassociation/docker-images/hopr-admin@sha256:b354b698ece88155607fcc0d325e57786ce0e15bb9d40dc180826ac3c1000c13"
+    image: >-
+      europe-west3-docker.pkg.dev/hoprassociation/docker-images/hopr-admin@sha256:b354b698ece88155607fcc0d325e57786ce0e15bb9d40dc180826ac3c1000c13
     ports:
       - "3000:80"
     restart: unless-stopped
