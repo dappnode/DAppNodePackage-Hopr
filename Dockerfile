@@ -4,4 +4,4 @@ FROM europe-west3-docker.pkg.dev/hoprassociation/docker-images/hoprd:${UPSTREAM_
 # not used at the moment, but might be useful in the future
 ENV DAPPNODE=true
 
-ENTRYPOINT ["/usr/bin/tini", "--", "node", "./lib/main.cjs"]
+ENTRYPOINT ["/bin/hoprd", "--configurationFilePath", "/app/hoprd.cfg.yaml"]
