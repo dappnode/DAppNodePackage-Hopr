@@ -17,9 +17,9 @@ mkShell {
     ## base
     envsubst
 
-    ## node, minimum recommended version is v16, see README for more details
-    nodejs-16_x # v16.5.0
-    (yarn.override { nodejs = nodejs-16_x; }) # v1.22.10
+    # build utils
+    nodejs_20
+    (yarn.override { nodejs = nodejs_20; })
 
     # custom pkg groups
     macosPkgs
