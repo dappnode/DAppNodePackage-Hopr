@@ -1,11 +1,11 @@
 version: "3.5"
 services:
   node:
-    image: "node.hopr.public.dappnode.eth:1.0.19"
+    image: "node.hopr.public.dappnode.eth:1.0.20"
     build:
       context: .
       args:
-        UPSTREAM_VERSION: "2.0.8@sha256:7208a4db0d48d67e99cecad033568cba61d95a2a5a9e439d256d5ba56eb156dd"
+        UPSTREAM_VERSION: "2.1.0-rc.1@sha256:233c6aaa40c90f76e74a5b6432e3a36c4ce2d33b05f06c9df33bb2afc0072edf"
     ports:
       - "9091:9091/tcp"
       - "9091:9091/udp"
