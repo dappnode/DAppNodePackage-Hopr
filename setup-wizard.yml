@@ -5,19 +5,25 @@ fields:
       type: environment
       name: HOPRD_PASSWORD
       service: node
-    title: Database Password
+    title: Identity file password
     required: true
-    description: It's the password which will be used to encrypt the database.
+    description: >-
+      Password used to decrypt the identity file.
+      **Please change this value!**
     secret: true
+
   - id: HOPRD_API_TOKEN
     target:
       type: environment
       name: HOPRD_API_TOKEN
       service: node
-    title: Api token
+    title: REST API token
     required: false
-    description: It's the password which will be used to access to the logs
+    description: >-
+      Secret token to the REST API exposed by the node.
+      **Please change this value!**
     secret: true
+
   - id: HOPRD_PROVIDER
     target:
       type: environment
@@ -25,8 +31,12 @@ fields:
       service: node
     title: RPC Provider URL
     required: false
-    description: Optional URL to the custom RPC provider this HOPR node should use.
+    description: >-
+      URL to the custom RPC provider this HOPR node should use.
+      If your DAppnode is running an Ethereum client, put its URL here.
+      Example: http://nethermind-xdai.dappnode:8545
     secret: false
+
   - id: HOPRD_NETWORK
     target:
       type: environment
@@ -34,8 +44,9 @@ fields:
       service: node
     title: HOPR network name
     required: false
-    description: Optional network environment this HOPR node should use.
+    description: Optional HOPR network environment this HOPR node should use.
     secret: false
+
   - id: IDENTITY
     target:
       type: fileUpload
@@ -45,6 +56,7 @@ fields:
     required: false
     description: Upload custom identity file of a previously deployed HOPR node.
     secret: false
+
   - id: HOPRD_SAFE_ADDRESS
     target:
       type: environment
@@ -52,8 +64,13 @@ fields:
       service: node
     title: Staking safe address
     required: true
-    description: Ethereum address of the associated staking safe
+    description: >-
+      Ethereum address of the associated staking safe.
+      Example: 0x010203040506070809aabbccddeeff00112233
     secret: false
+    pattern: "^0x[a-fA-F0-9]{40}$"
+    patternErrorMessage: Must be a valid Ethereum address!
+
   - id: HOPRD_MODULE_ADDRESS
     target:
       type: environment
@@ -61,14 +78,31 @@ fields:
       service: node
     title: Staking safe module address
     required: true
-    description: Ethereum address of the module connectedd to the associated staking safe
+    description: >-
+      Ethereum address of the module connected to the associated staking safe.
+      Example: 0x010203040506070809aabbccddeeff00112233
     secret: false
+    pattern: "^0x[a-fA-F0-9]{40}$"
+    patternErrorMessage: Must be a valid Ethereum address!
+
   - id: HOPRD_HOST
     target:
       type: environment
       name: HOPRD_HOST
       service: node
-    title: Host IP/Port mapping
+    title: Public host IP and port
     required: true
-    description: Mapping of the public ip and p2p port
+    description: >-
+      Must contain the "host:port" binding where the node should listen.
+      on your router and exposed to the Internet.
+      You can also use the (dyn)DNS name of your node as "host".
+      The "host" part must be an external public IP address or DNS name of this node.
+      The recommended default TCP "port" is 9091. Make sure the given port is port-forwarded
+      on your router and exposed to the Internet.
+      
+      Example (public IP address): 1.2.3.4:9091
+      Example (dynDNS entry): abcd1234.dyndns.dappnode.io:9091
     secret: false
+    pattern: "^[a-z0-9.]{3,}:\d{1,5}$"
+    patternErrorMessage: Must be in correct host:port format!
+
