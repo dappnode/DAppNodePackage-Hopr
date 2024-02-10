@@ -103,6 +103,6 @@ fields:
       Example (public IP address): 1.2.3.4:9091
       Example (dynDNS entry): abcd1234.dyndns.dappnode.io:9091
     secret: false
-    pattern: "^[a-z0-9.]{3,}:\d{1,5}$"
+    pattern: "^[a-z0-9.]{3,}:[0-9]{2,5}$"
     patternErrorMessage: Must be in correct host:port format!
 
