@@ -1,7 +1,7 @@
 version: "3.5"
 services:
   node:
-    image: "node.hopr.public.dappnode.eth:1.0.19"
+    image: "node.hopr.public.dappnode.eth:1.0.21"
     build:
       context: .
       args:
