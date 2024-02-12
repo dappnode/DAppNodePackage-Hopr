@@ -2,7 +2,7 @@
 
 hopr:
   db:
-    data: /app/hoprd-db/sqlite
+    data: /app/hoprd-db/db
     initialize: true
     force_initialize: false
   strategy:
