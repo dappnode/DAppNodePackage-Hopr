@@ -7,9 +7,11 @@ fields:
       service: node
     title: Identity file password
     required: true
+    pattern: "[^\\s]{10,}"
+    patternErrorMessage: Must be at least 10 characters long!
     description: >-
-      Password used to decrypt the identity file.
-      **Please change this value!**
+      Password used to protect the new or existing identity file.
+      **This value must be set !**
     secret: true
 
   - id: HOPRD_API_TOKEN
@@ -21,7 +23,8 @@ fields:
     required: false
     description: >-
       Secret token to the REST API exposed by the node.
-      **Please change this value!**
+      Set this value **only if** you don't want to use the DMS metrics for the HOPR node
+      *or* if you plan to expose your REST API (port 3000) or HOPR Admin UI (port 3001) to the public.
     secret: true
 
   - id: HOPRD_PROVIDER
@@ -34,7 +37,8 @@ fields:
     description: >-
       URL to the custom RPC provider this HOPR node should use.
       If your DAppnode is running an Ethereum client, put its URL here.
-      Example: http://nethermind-xdai.dappnode:8545
+      
+      *Example: http://nethermind-xdai.dappnode:8545*
     secret: false
 
   - id: HOPRD_NETWORK
@@ -76,7 +80,8 @@ fields:
     required: true
     description: >-
       Ethereum address of the associated staking safe.
-      Example: 0x010203040506070809aabbccddeeff00112233
+      
+      *Example: 0x010203040506070809aabbccddeeff00112233*
     secret: false
     pattern: "^0x[a-fA-F0-9]{40}$"
     patternErrorMessage: Must be a valid Ethereum address!
@@ -90,7 +95,8 @@ fields:
     required: true
     description: >-
       Ethereum address of the module connected to the associated staking safe.
-      Example: 0x010203040506070809aabbccddeeff00112233
+      
+      *Example: 0x010203040506070809aabbccddeeff00112233*
     secret: false
     pattern: "^0x[a-fA-F0-9]{40}$"
     patternErrorMessage: Must be a valid Ethereum address!
@@ -103,15 +109,15 @@ fields:
     title: Public host IP and port
     required: true
     description: >-
-      Must contain the "host:port" binding where the node should listen.
+      Must contain the `host:port` binding where the node should listen.
       on your router and exposed to the Internet.
-      You can also use the (dyn)DNS name of your node as "host".
-      The "host" part must be an external public IP address or DNS name of this node.
-      The recommended default TCP "port" is 9091. Make sure the given port is port-forwarded
+      You can also use the (dyn)DNS name of your node as `host`.
+      The `host` part must be an external public IP address or DNS name of this node.
+      The recommended default TCP `port` is 9091. Make sure the given port is port-forwarded
       on your router and exposed to the Internet.
       
-      Example (public IP address): 1.2.3.4:9091
-      Example (dynDNS entry): abcd1234.dyndns.dappnode.io:9091
+      *Example (public IP address): 1.2.3.4:9091*,
+      *Example (dynDNS entry): abcd1234.dyndns.dappnode.io:9091*
     secret: false
     pattern: "^[a-z0-9.]{3,}:[0-9]{2,5}$"
     patternErrorMessage: Must be in correct host:port format!
