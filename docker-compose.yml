@@ -12,6 +12,8 @@ services:
       - "3001"
     volumes:
       - "data:/app/hoprd-db"
+    security_opt:
+      - "seccomp:unconfined"
     environment:
       - RUST_LOG=info
       - HOPRD_NETWORK=dufour
