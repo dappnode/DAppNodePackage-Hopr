@@ -57,6 +57,16 @@ fields:
     description: Upload custom identity file of a previously deployed HOPR node.
     secret: false
 
+  - id: CONFIG
+    target:
+      type: fileUpload
+      path: /app/hoprd.cfg.yaml
+      service: node
+    title: Custom HOPR node configuration file
+    required: false
+    description: Upload custom configuration file for the HOPR node.
+    secret: false
+
   - id: HOPRD_SAFE_ADDRESS
     target:
       type: environment

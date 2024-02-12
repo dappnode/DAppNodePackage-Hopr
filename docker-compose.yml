@@ -11,10 +11,11 @@ services:
       - "9091:9091/udp"
       - "3001"
     volumes:
-      - "data:/app/data"
+      - "data:/app/hoprd-db"
     environment:
       - RUST_LOG=info
       - HOPRD_NETWORK=dufour
+      - HOPRD_CONFIGURATION_FILE_PATH=/app/hoprd.cfg.yaml
       - HOPRD_HOST=127.0.0.1:9091
       - HOPRD_SAFE_ADDRESS=0x
       - HOPRD_MODULE_ADDRESS=0x
