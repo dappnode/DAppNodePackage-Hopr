@@ -24,7 +24,7 @@ fields:
       Secret token to the REST API exposed by the node.
 
       Set this value **only if** you don't want to use the DMS metrics for the HOPR node
-      *or* if you plan to expose your REST API (port 3000) or HOPR Admin UI (port 3001) to the public.
+      *or* if you plan to expose your REST API (port 3001) or HOPR Admin UI (port 3000) to the public.
     secret: true
 
   - id: HOPRD_PROVIDER
