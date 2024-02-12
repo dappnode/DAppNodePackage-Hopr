@@ -56,11 +56,15 @@
   "backup": [
     {
       "name": "db",
-      "path": "/app/hoprd-db/data"
+      "path": "/app/hoprd-db/db"
     },
     {
       "name": "identity",
       "path": "/app/hoprd-db/.hopr-identity"
+    },
+    {
+      "name": "config",
+      "path": "/app/hoprd.cfg.yaml"
     }
   ],
   "globalEnvs": [
