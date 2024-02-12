@@ -5,7 +5,8 @@ services:
     build:
       context: .
       args:
-        UPSTREAM_VERSION: 2.1.0-rc.1@sha256:233c6aaa40c90f76e74a5b6432e3a36c4ce2d33b05f06c9df33bb2afc0072edf
+        UPSTREAM_VERSION: >-
+          2.1.0-rc.1@sha256:233c6aaa40c90f76e74a5b6432e3a36c4ce2d33b05f06c9df33bb2afc0072edf
     ports:
       - "9091:9091/tcp"
       - "9091:9091/udp"
@@ -15,17 +16,17 @@ services:
     security_opt:
       - "seccomp:unconfined"
     environment:
-      - RUST_LOG=info
-      - HOPRD_NETWORK=dufour
-      - HOPRD_CONFIGURATION_FILE_PATH=/app/hoprd.cfg.yaml
-      - HOPRD_HOST=127.0.0.1:9091
-      - HOPRD_SAFE_ADDRESS=0x
-      - HOPRD_MODULE_ADDRESS=0x
-      - HOPRD_HEARTBEAT_THRESHOLD=60
-      - HOPRD_HEARTBEAT_INTERVAL=20
-      - HOPRD_HEARTBEAT_VARIANCE=1
-      - HOPRD_PASSWORD=open-sesame-iTwnsPNg0hpagP+o6T0KOwiH9RQ0
-      - HOPRD_PROVIDER=https://primary.gnosis-chain.rpc.hoprtech.net/
+      RUST_LOG: info
+      HOPRD_NETWORK: dufour
+      HOPRD_CONFIGURATION_FILE_PATH: /app/hoprd.cfg.yaml
+      HOPRD_HOST: "127.0.0.1:9091"
+      HOPRD_SAFE_ADDRESS: 0x
+      HOPRD_MODULE_ADDRESS: 0x
+      HOPRD_HEARTBEAT_THRESHOLD: 60
+      HOPRD_HEARTBEAT_INTERVAL: 20
+      HOPRD_HEARTBEAT_VARIANCE: 1
+      HOPRD_PASSWORD: ""
+      HOPRD_PROVIDER: "https://primary.gnosis-chain.rpc.hoprtech.net/"
     restart: unless-stopped
     deploy:
       resources:
