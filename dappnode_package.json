@@ -20,8 +20,8 @@
   ],
   "links": {
     "homepage": "https://hoprnet.org/",
-    "ui": "http://admin.hopr.public.dappnode/?apiEndpoint=http://node.hopr.public.dappnode:3001",
-    "api": "http://node.hopr.public.dappnode:3001",
+    "ui": "http://admin.hopr.public.dappnode/?apiEndpoint=http://hopr.public.dappnode:3001",
+    "api": "http://hopr.public.dappnode:3001",
     "docs": "https://docs.hoprnet.org"
   },
   "repository": {
