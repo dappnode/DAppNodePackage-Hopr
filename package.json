@@ -1,9 +1,0 @@
-{
-  "name": "hopr-dappnode",
-  "repository": "https://github.com/dappnode/DAppNodePackage-Hopr",
-  "private": true,
-  "packageManager": "yarn@4.1.0",
-  "devDependencies": {
-    "@dappnode/dappnodesdk": "^0.3.14"
-  }
-}

@@ -1,12 +1,9 @@
 # DAppNodeSDK release directories
 /build_*/
 /build/
-/.direnv/
-/node_modules/
 
-# yarn v2
-.yarn/cache
-.yarn/unplugged
-.yarn/build-state.yml
-.yarn/install-state.gz
-.pnp.*
+# Nix OS
+/.direnv
+
+# Node.js
+/node_modules/
