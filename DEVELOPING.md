@@ -59,3 +59,5 @@ When connected to a DAppnode system, follow the link and install the package. If
 When running with the [DMS package](http://my.dappnode/installer/dnp/dms.dnp.dappnode.eth) (Grafana, Loki, Prometheus):
 
 - [http://prometheus.dms.dappnode:9090/targets](http://prometheus.dms.dappnode:9090/targets) lists Prometheus targets. Make sure the package's target is available
+
+Automatic import of Prometheus targets is only available if `prometheusTargets` and automatic import of Grafana dashboards is only available if `grafanaDashboards` is present in the observed [package manifest](http://my.dappnode/package-manifest/hopr.public.dappnode.eth)
