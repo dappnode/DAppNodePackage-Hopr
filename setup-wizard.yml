@@ -40,6 +40,8 @@ fields:
       
       *Example:* `http://nethermind-xdai.dappnode:8545`
     secret: false
+    pattern: "^http[s]{0,1}://[a-z0-9.-]{3,}:[0-9]{2,5}$"
+    patternErrorMessage: Must be a valid url starting with `http://` or `https://` and ending with `:port`
 
   - id: HOPRD_NETWORK
     target:
@@ -80,6 +82,8 @@ fields:
     required: true
     description: |-
       Ethereum address of the associated staking safe.
+
+      Check [Staking Hub](https://hub.hoprnet.org/staking/dashboard) for the right address.
       
       *Example:* `0x010203040506070809aabbccddeeff00112233`
     secret: false
@@ -95,6 +99,8 @@ fields:
     required: true
     description: |-
       Ethereum address of the module connected to the associated staking safe.
+
+      Check [Staking Hub](https://hub.hoprnet.org/staking/dashboard) for the right address.
       
       *Example:* `0x010203040506070809aabbccddeeff00112233`
     secret: false
@@ -121,6 +127,6 @@ fields:
 
       *Example (dynDNS entry):* `abcd1234.dyndns.dappnode.io:9091`
     secret: false
-    pattern: "^[a-z0-9.]{3,}:[0-9]{2,5}$"
+    pattern: "^[a-z0-9.-]{3,}:[0-9]{2,5}$"
     patternErrorMessage: Must be in correct host:port format!
 

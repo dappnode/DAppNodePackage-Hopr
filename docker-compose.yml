@@ -26,7 +26,7 @@ services:
       HOPRD_HEARTBEAT_INTERVAL: 20
       HOPRD_HEARTBEAT_VARIANCE: 1
       HOPRD_PASSWORD: ""
-      HOPRD_PROVIDER: "https://primary.gnosis-chain.rpc.hoprtech.net/"
+      HOPRD_PROVIDER: ""
     restart: unless-stopped
     deploy:
       resources:
