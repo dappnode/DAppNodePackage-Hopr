@@ -46,6 +46,15 @@ This should create output similar to
   http://my.dappnode/installer/public/%2Fipfs%2FQmdZHJPrTJQZRr9gJKhQKXVSVSRf3jdBj6LqbZuZ8MNSWF
 ```
 
+### Grafana dashboard upgrades
+
+When upgrading the Grafana dashboards, make sure:
+
+- the file is called `hopr-public-grafana-dashboard.json`
+- the `uid` property is non-empty and starts with `hopr-public`
+
+# Debugging
+
 When connected to a DAppnode system, follow the link and install the package. If it is a development build, make sure to disable signature verification before installing the package.
 
 ![howto](bypass_signature_check.png)
@@ -60,4 +69,4 @@ When running with the [DMS package](http://my.dappnode/installer/dnp/dms.dnp.dap
 
 - [http://prometheus.dms.dappnode:9090/targets](http://prometheus.dms.dappnode:9090/targets) lists Prometheus targets. Make sure the package's target is available
 
-Automatic import of Prometheus targets is only available if `prometheusTargets` and automatic import of Grafana dashboards is only available if `grafanaDashboards` is present in the observed [package manifest](http://my.dappnode/package-manifest/hopr.public.dappnode.eth)
+Automatic import of Prometheus targets is only available if `prometheusTargets` and automatic import of Grafana dashboards is only available if `grafanaDashboards` is present in the observed [package manifest](http://my.dappnode/package-manifest/hopr.public.dappnode.eth).
