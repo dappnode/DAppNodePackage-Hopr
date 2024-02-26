@@ -51,7 +51,7 @@ This should create output similar to
 When upgrading the Grafana dashboards, make sure:
 
 - the file is called `hopr-public-grafana-dashboard.json`
-- the `uid` property is non-empty and starts with `hopr-public`
+- the `uid` property is non-empty and starts with `hopr-public-`
 
 # Debugging
 
