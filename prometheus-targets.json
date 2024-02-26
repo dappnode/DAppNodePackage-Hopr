@@ -6,7 +6,7 @@
       "__metrics_path__": "/api/v3/node/metrics"
     },
     "targets": [
-      "node.hopr.public.dappnode:3001"
+      "hopr.public.dappnode:3001"
     ]
   }
 ]
