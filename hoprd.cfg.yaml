@@ -8,15 +8,15 @@ hopr:
   strategy:
     on_fail_continue: true
     allow_recursive: true
-    finalize_channel_closure: true
     strategies:
       - !Aggregating
         aggregation_threshold: 300
         unrealized_balance_ratio: 0.9
-        aggregation_timeout: 60
         aggregate_on_channel_close: true
       - !AutoRedeeming
         redeem_only_aggregated: true
+      - !ClosureFinalizer
+        max_closure_overdue: 3600
   network_options:
     min_delay: 1
     max_delay: 300
