@@ -36,7 +36,7 @@ fields:
     required: false
     description: |-
       URL to the custom RPC provider this HOPR node should use.
-      If your DAppnode is running a Gnosis Ethereum client, it is **strongly recommended** to use it here.
+      If your DAppnode is running a Gnosis Chain RPC endpoint, it is **strongly recommended** to use it here.
       
       *Example:* `http://nethermind-xdai.dappnode:8545`
     secret: false
