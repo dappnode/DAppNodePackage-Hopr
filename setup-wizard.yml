@@ -40,8 +40,8 @@ fields:
       
       *Example:* `http://nethermind-xdai.dappnode:8545`
     secret: false
-    pattern: "^http[s]{0,1}://[a-z0-9.-]{3,}(:[0-9]{2,5})?(/[a-z0-9.-]+)?$"
-    patternErrorMessage: Must be a valid url starting with `http://` or `https://` and ending with `:port`
+    pattern: "^http[s]{0,1}://[a-z0-9.-]{3,}(:[0-9]{2,5})?(/[a-z0-9.-/]+)?$"
+    patternErrorMessage: Must be a valid url starting with `http://` or `https://`
 
   - id: HOPRD_NETWORK
     target:
