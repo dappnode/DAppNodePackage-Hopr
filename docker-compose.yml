@@ -43,4 +43,4 @@ services:
         limits:
           memory: 256M
 volumes:
-  data: {}
+  db: {}
