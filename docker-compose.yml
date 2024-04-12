@@ -12,7 +12,7 @@ services:
       - "9091:9091/udp"
       - "3001"
     volumes:
-      - "data:/app/hoprd-db"
+      - "db:/app/hoprd-db"
     security_opt:
       - "seccomp:unconfined"
     environment:
@@ -43,4 +43,4 @@ services:
         limits:
           memory: 256M
 volumes:
-  data: {}
+  db: {}
