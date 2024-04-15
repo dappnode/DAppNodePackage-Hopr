@@ -127,5 +127,5 @@ fields:
 
       *Example (dynDNS entry):* `abcd1234.dyndns.dappnode.io:9091`
     secret: false
-    pattern: "^[a-z0-9.-]{3,}:[0-9]{2,5}$"
+    pattern: "^[a-z0-9.-]{3,}:909[1-9]$"
     patternErrorMessage: Must be in correct host:port format!
