@@ -36,11 +36,6 @@
   },
   "exposable": [
     {
-      "name": "HOPR",
-      "description": "HOPR P2P port",
-      "port": 9091
-    },
-    {
       "name": "HOPR Admin UI",
       "description": "Port for HOPR Admin UI console",
       "port": 3000
@@ -49,6 +44,51 @@
       "name": "HOPR REST API",
       "description": "Port for HOPR node REST API",
       "port": 3001
+    },
+    {
+      "name": "HOPR p2p",
+      "description": "HOPR P2P port",
+      "port": 9091
+    },
+    {
+      "name": "HOPR p2p (alt 1)",
+      "description": "HOPR P2P port (alternative 1)",
+      "port": 9092
+    },
+    {
+      "name": "HOPR p2p (alt 2)",
+      "description": "HOPR P2P port (alternative 2)",
+      "port": 9093
+    },
+    {
+      "name": "HOPR p2p (alt 3)",
+      "description": "HOPR P2P port (alternative 3)",
+      "port": 9094
+    },
+    {
+      "name": "HOPR p2p (alt 4)",
+      "description": "HOPR P2P port (alternative 4)",
+      "port": 9095
+    },
+    {
+      "name": "HOPR p2p (alt 5)",
+      "description": "HOPR P2P port (alternative 5)",
+      "port": 9096
+    },
+    {
+      "name": "HOPR p2p (alt 6)",
+      "description": "HOPR P2P port (alternative 6)",
+      "port": 9097
+    },
+    {
+      "name": "HOPR p2p (alt 7)",
+      "description": "HOPR P2P port (alternative 7)",
+      "port": 9098
+    },
+    {
+      "name": "HOPR p2p (alt 8)",
+      "description": "HOPR P2P port (alternative 8)",
+      "port": 9099
     }
   ],
   "license": "GLP-3.0",
