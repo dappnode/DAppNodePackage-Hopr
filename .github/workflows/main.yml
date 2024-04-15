@@ -2,10 +2,6 @@ name: "Main"
 on:
   pull_request:
   push:
-    branches:
-      - "master"
-      - "main"
-      - "v[0-9]+.[0-9]+.[0-9]+"
     paths-ignore:
       - "README.md"
 
@@ -13,7 +9,6 @@ jobs:
   build-test:
     runs-on: ubuntu-latest
     name: Build test
-    if: github.event_name != 'push'
     steps:
       - uses: actions/checkout@v2
       - run: npx @dappnode/dappnodesdk build --skip_save
@@ -21,7 +16,7 @@ jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
-    if: github.event_name == 'push'
+    depends-on: build-test
     steps:
       - uses: actions/checkout@v2
       - name: Publish
