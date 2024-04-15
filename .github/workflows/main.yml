@@ -16,7 +16,7 @@ jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
-    depends-on: build-test
+    needs: build-test
     steps:
       - uses: actions/checkout@v2
       - name: Publish
