@@ -11,7 +11,9 @@ jobs:
     name: Build test
     steps:
       - uses: actions/checkout@v2
-      - run: npx @dappnode/dappnodesdk build --skip_save
+      - run: |
+        npm install
+        npx @dappnode/dappnodesdk build --skip_save
 
   release:
     name: Release
@@ -20,7 +22,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Publish
-        run: npx @dappnode/dappnodesdk publish patch --dappnode_team_preset
+        run: |
+          npm install
+          npx @dappnode/dappnodesdk publish patch --dappnode_team_preset
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEVELOPER_ADDRESS: "0x7305356ad936A06c4ea5DF45AD5E5C3ff9Db818E"
