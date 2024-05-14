@@ -12,8 +12,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-        npm install
-        npx @dappnode/dappnodesdk build --skip_save
+          npm install
+          npx @dappnode/dappnodesdk build --skip_save
 
   release:
     name: Release
