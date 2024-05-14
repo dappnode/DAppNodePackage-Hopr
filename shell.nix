@@ -19,10 +19,12 @@ mkShell {
 
     # build utils
     nodejs_20
-    (yarn.override { nodejs = nodejs_20; })
 
     # custom pkg groups
     macosPkgs
     linuxPkgs
   ];
+  shellHook = ''
+    npm install
+  '';
 }
