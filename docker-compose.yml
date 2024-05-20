@@ -9,7 +9,7 @@ services:
         UPSTREAM_VERSION: >-
           2.1.0@sha256:28f5db3a37275edecb3b4d52f2d254832bf3346d9464a538c419575a40d8b744
     ports:
-      - "3001"
+      - "3001:3001/tcp"
       - "9091:9091/tcp"
       - "9091:9091/udp"
       - "9092:9092/tcp"
@@ -53,7 +53,7 @@ services:
     # The actual image name  will be set automatically by the sdk.
     # This tag only serves to pull the correct image during build.
     image: >-
-      europe-west3-docker.pkg.dev/hoprassociation/docker-images/hopr-admin:1.1.7
+      europe-west3-docker.pkg.dev/hoprassociation/docker-images/hopr-admin:1.2.2
     ports:
       - "3000:80"
     restart: unless-stopped
