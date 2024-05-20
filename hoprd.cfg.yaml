@@ -9,9 +9,6 @@ hopr:
     on_fail_continue: true
     allow_recursive: true
     strategies:
-      - !AutoFunding
-        min_stake_threshold: "1000000000000000000 HOPR"
-        funding_amount: "10000000000000000000 HOPR"
       - !Aggregating
         aggregation_threshold: 100
         unrealized_balance_ratio: 0.9
