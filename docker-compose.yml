@@ -9,7 +9,7 @@ services:
         UPSTREAM_VERSION: >-
           2.1.0@sha256:28f5db3a37275edecb3b4d52f2d254832bf3346d9464a538c419575a40d8b744
     ports:
-      - "3001"
+      - "3001:3001/tcp"
       - "9091:9091/tcp"
       - "9091:9091/udp"
       - "9092:9092/tcp"
