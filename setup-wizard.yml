@@ -53,15 +53,15 @@ fields:
     description: Optional HOPR network environment this HOPR node should use.
     secret: false
 
-  - id: IDENTITY
-    target:
-      type: fileUpload
-      path: /app/hoprd-db/.hopr-identity
-      service: node
-    title: Custom identity file
-    required: false
-    description: Upload custom identity file of a previously deployed HOPR node.
-    secret: false
+    #  - id: IDENTITY
+    #    target:
+    #      type: fileUpload
+    #      path: /app/hoprd-db/.hopr-identity
+    #      service: node
+    #    title: Custom identity file
+    #    required: false
+    #    description: Upload custom identity file of a previously deployed HOPR node.
+    #    secret: false
 
   - id: CONFIG
     target:
