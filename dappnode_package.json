@@ -106,7 +106,7 @@
   "backup": [
     {
       "name": "db",
-      "path": "/app/hoprd-db/db"
+      "path": "/app/hoprd-db"
     },
     {
       "name": "identity",
