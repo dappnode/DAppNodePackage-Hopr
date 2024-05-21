@@ -110,7 +110,7 @@
     },
     {
       "name": "identity",
-      "path": "/app/hoprd-db/.hopr-identity"
+      "path": "/app/hopr.id"
     },
     {
       "name": "config",

@@ -47,7 +47,7 @@ hopr:
     announce_local_addresses: false
     prefer_local_addresses: false
 identity:
-  file: /app/hoprd-db/.hopr-identity
+  file: /app/hopr.id
 api:
   enable: true
   host:
