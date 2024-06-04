@@ -34,7 +34,6 @@ services:
       - "seccomp:unconfined"
     environment:
       RUST_LOG: info
-      HOPRD_NETWORK: dufour
       HOPRD_CONFIGURATION_FILE_PATH: /app/hoprd.cfg.yaml
       HOPRD_HOST: "127.0.0.1:9091"
       HOPRD_SAFE_ADDRESS: 0x
