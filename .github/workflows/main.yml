@@ -22,10 +22,25 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Publish
+        id: publish
         run: |
-          npm install
-          npx @dappnode/dappnodesdk publish patch --dappnode_team_preset
+          npx @dappnode/dappnodesdk publish patch --dappnode_team_preset | tee /tmp/publish.log
+          ipfs_hash=$(grep -oP 'Release hash : \K/ipfs/\w+' /tmp/publish.log)
+          echo "ipfs_hash=$ipfs_hash" >> $GITHUB_OUTPUT
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEVELOPER_ADDRESS: "0x7305356ad936A06c4ea5DF45AD5E5C3ff9Db818E"
 
+      - name: Send message to Zulip
+        uses: zulip/zulip-action@v1
+        with:
+          api-key: ${{ secrets.ZULIP_API_KEY }}
+          email: "github@hoprnet.org"
+          organization-url: "https://hopr.zulipchat.com"
+          type: "stream"
+          to: "Releases"
+          topic: "main"
+          content: |
+            A new hoprd dAppNode package version is available.
+            - IPFS Hash: ${{ steps.publish.outputs.ipfs_hash }}
+            Access to your dAppNode and check for the updates
