@@ -27,6 +27,7 @@ jobs:
           npx @dappnode/dappnodesdk publish patch --dappnode_team_preset | tee /tmp/publish.log
           ipfs_hash=$(grep -oP 'Release hash : \K/ipfs/\w+' /tmp/publish.log)
           echo "ipfs_hash=$ipfs_hash" >> $GITHUB_OUTPUT
+          echo "ipfs_hash=$ipfs_hash"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEVELOPER_ADDRESS: "0x7305356ad936A06c4ea5DF45AD5E5C3ff9Db818E"
