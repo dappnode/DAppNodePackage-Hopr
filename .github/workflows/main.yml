@@ -32,10 +32,10 @@ jobs:
           DEVELOPER_ADDRESS: "0x7305356ad936A06c4ea5DF45AD5E5C3ff9Db818E"
 
       - name: Send message to Zulip
-        uses: zulip/zulip-action@v1
+        uses: zulip/github-actions-zulip/send-message@v1
         with:
           api-key: ${{ secrets.ZULIP_API_KEY }}
-          email: "github@hoprnet.org"
+          email: ${{ secrets.ZULIP_EMAIL }}
           organization-url: "https://hopr.zulipchat.com"
           type: "stream"
           to: "Releases"
