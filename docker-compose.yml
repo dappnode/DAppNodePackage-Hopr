@@ -52,7 +52,7 @@ services:
     # The actual image name  will be set automatically by the sdk.
     # This tag only serves to pull the correct image during build.
     image: >-
-      europe-west3-docker.pkg.dev/hoprassociation/docker-images/hopr-admin:1.2.2
+      europe-west3-docker.pkg.dev/hoprassociation/docker-images/hopr-admin:2.1.2
     ports:
       - "3000:80"
     restart: unless-stopped
