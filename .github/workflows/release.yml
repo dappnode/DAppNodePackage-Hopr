@@ -1,0 +1,26 @@
+name: Build (release package)
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and publish to package repository
+        run: |
+          npm install
+          npx @dappnode/dappnodesdk publish patch \
+            --provider "remote" \
+            --upload_to "ipfs" \
+            --verbose \
+            --github_release | tee build.log
+
+          echo "DNP (DAppNode Package) built and uploaded" >> $GITHUB_STEP_SUMMARY
+          grep "ipfs" build.log >> $GITHUB_STEP_SUMMARY
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEVELOPER_ADDRESS: "0x7305356ad936A06c4ea5DF45AD5E5C3ff9Db818E"
