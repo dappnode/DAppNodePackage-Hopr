@@ -1,8 +1,7 @@
 version: "3.5"
 services:
   node:
-    # Do not set image name here, it will be set automatically by the sdk.
-    # image: "node.hopr.public.dappnode.eth:1.0.21"
+    # Do not set image field here, it will be set automatically by the sdk.
     build:
       context: .
       args:
