@@ -54,9 +54,9 @@ services:
     build:
       context: ./hopr-admin
     image: >-
-      europe-west3-docker.pkg.dev/hoprassociation/docker-images/hopr-admin:2.1.6
+      europe-west3-docker.pkg.dev/hoprassociation/docker-images/hopr-admin:2.1.7
     ports:
-      - "3000:80"
+      - "3000:4677"
     restart: unless-stopped
     deploy:
       resources:
