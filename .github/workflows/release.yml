@@ -38,6 +38,6 @@ jobs:
           to: "Releases"
           topic: "main"
           content: |
-            A new hoprd dAppNode package version is available.
+            A new hoprd dAppNode package (dufour) version is available.
             - IPFS Hash: ${{ steps.publish.outputs.ipfs_hash }}
             Access to your dAppNode and check for the updates
