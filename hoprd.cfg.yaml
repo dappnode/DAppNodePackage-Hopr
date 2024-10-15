@@ -1,5 +1,4 @@
 ---
-
 hopr:
   db:
     data: /app/hoprd-db/db
@@ -31,11 +30,7 @@ hopr:
     backoff_min: 2.0
     backoff_max: 300.0
   protocol:
-    ack:
-      timeout: 15
     heartbeat:
-      timeout: 15
-    msg:
       timeout: 15
     ticket_aggregation:
       timeout: 15
