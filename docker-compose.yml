@@ -6,7 +6,7 @@ services:
       context: .
       args:
         UPSTREAM_VERSION: >-
-          2.1.4@sha256:3618cdba157242264502bbda72b5a7fedc76d4895bb7d9f5a884a3baa9c625af
+          2.1.5@sha256:ba5acd2ef4d85b1b3cb5f3245e12c2d6877ca7f404af4a42429f1f362a666846
     ports:
       - "3001:3001/tcp"
       - "9091:9091/tcp"
@@ -53,7 +53,7 @@ services:
     build:
       context: ./hopr-admin
     image: >-
-      europe-west3-docker.pkg.dev/hoprassociation/docker-images/hopr-admin:2.1.6.1
+      europe-west3-docker.pkg.dev/hoprassociation/docker-images/hopr-admin:2.1.10
     ports:
       - "3000:4677"
     restart: unless-stopped
