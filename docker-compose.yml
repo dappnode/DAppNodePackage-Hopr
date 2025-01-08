@@ -27,6 +27,8 @@ services:
       - "9098:9098/udp"
       - "9099:9099/tcp"
       - "9099:9099/udp"
+      - "10000-10100:10000-10100/tcp"
+      - "10000-10100:10000-10100/udp"
     volumes:
       - "db:/app/hoprd-db"
     security_opt:
@@ -42,6 +44,7 @@ services:
       HOPRD_HEARTBEAT_VARIANCE: 1
       HOPRD_PASSWORD: ""
       HOPRD_PROVIDER: ""
+      HOPRD_SESSION_PORT_RANGE: "10000:10100"
     restart: unless-stopped
     deploy:
       resources:
