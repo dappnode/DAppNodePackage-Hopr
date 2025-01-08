@@ -6,4 +6,3 @@ ENV DAPPNODE=true
 
 ADD hoprd.cfg.yaml /app/hoprd.cfg.yaml
 
-ENTRYPOINT ["/bin/hoprd", "--configurationFilePath", "/app/hoprd.cfg.yaml"]
