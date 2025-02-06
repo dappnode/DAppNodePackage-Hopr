@@ -8,6 +8,8 @@ services:
         UPSTREAM_VERSION: >-
           2.2.1@sha256:1ad1f5468917f5202c3dc8cf3e5ac5d5725a279c4bc85c3b9d84f2d2680a5dd0
     ports:
+      - "1422:1422/udp"
+      - "1422:1422/tcp"
       - "3001:3001/tcp"
       - "9091:9091/tcp"
       - "9091:9091/udp"
