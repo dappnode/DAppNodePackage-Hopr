@@ -9,25 +9,14 @@ hopr:
     allow_recursive: true
     strategies:
       - !Aggregating
-        aggregation_threshold: 100
+        aggregation_threshold: 1000
         unrealized_balance_ratio: 0.9
         aggregate_on_channel_close: true
       - !AutoRedeeming
         redeem_only_aggregated: true
-        minimum_redeem_ticket_value: "30000000000000000000 HOPR"
+        minimum_redeem_ticket_value: "25000000000000000000 HOPR"
       - !ClosureFinalizer
-        max_closure_overdue: 3600
-  network_options:
-    min_delay: 1
-    max_delay: 300
-    quality_bad_threshold: 0.1
-    quality_offline_threshold: 0.0
-    quality_step: 0.1
-    quality_avg_window_size: 25
-    ignore_timeframe: 600
-    backoff_exponent: 1.5
-    backoff_min: 2.0
-    backoff_max: 300.0
+        max_closure_overdue: 300
   protocol:
     heartbeat:
       timeout: 15
@@ -35,7 +24,6 @@ hopr:
       timeout: 15
   chain:
     announce: true
-    check_unrealized_balance: true
     network: dufour
     keep_logs: true
     fast_sync: true
@@ -51,8 +39,3 @@ api:
   host:
     address: !IPv4 0.0.0.0
     port: 3001
-inbox:
-  capacity: 512
-  max_age: 900
-  excluded_tags:
-    - 0
