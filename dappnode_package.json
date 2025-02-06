@@ -54,6 +54,12 @@
       "serviceName": "node"
     },
     {
+      "name": "GnosisVPN Session port",
+      "description": "Port used for Gnosis VPN",
+      "port": 1422,
+      "serviceName": "node"
+    },
+    {
       "name": "HOPR p2p (alt 1)",
       "description": "HOPR P2P port (alternative 1)",
       "port": 9092,
