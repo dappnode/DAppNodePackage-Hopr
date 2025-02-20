@@ -5,8 +5,10 @@ services:
     build:
       context: .
       args:
+        # see https://console.cloud.google.com/artifacts/docker/hoprassociation/europe-west3/docker-images/hoprd?inv=1&invt=AbqEGg&project=hoprassociation&pli=1
+        # using 2.2.3 pre-release version
         UPSTREAM_VERSION: >-
-          2.2.2@sha256:27a8dce397e2d3c5b2b69b4a8967611993a4b6f01b2e167da629418d96880a64
+          2.2.3-pr.6884@sha256:5e27190b3dd6debc76776f52dc689bc5fd99abb10c4eb31c8e64e3e6f5bfa8b5
     ports:
       - "1422:1422/udp"
       - "1422:1422/tcp"
@@ -41,12 +43,13 @@ services:
       HOPRD_HOST: "127.0.0.1:9091"
       HOPRD_SAFE_ADDRESS: 0x
       HOPRD_MODULE_ADDRESS: 0x
-      HOPRD_HEARTBEAT_THRESHOLD: 60
-      HOPRD_HEARTBEAT_INTERVAL: 20
-      HOPRD_HEARTBEAT_VARIANCE: 1
       HOPRD_PASSWORD: ""
       HOPRD_PROVIDER: ""
       HOPRD_SESSION_PORT_RANGE: "10000:10100"
+      HOPRD_MAX_BLOCK_RANGE: 100
+      HOPRD_MAX_RPC_REQUESTS_PER_SEC: 10
+      ADDITIONAL_CMDLINE_ARGS: ""
+      ADDITIONAL_ENVIRONMENT_VARS: ""
     restart: unless-stopped
     deploy:
       resources:
