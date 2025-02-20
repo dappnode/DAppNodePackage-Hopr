@@ -5,3 +5,8 @@ FROM europe-west3-docker.pkg.dev/hoprassociation/docker-images/hoprd:${UPSTREAM_
 ENV DAPPNODE=true
 
 ADD hoprd.cfg.yaml /app/hoprd.cfg.yaml
+ADD entrypoint.sh /bin/entrypoint.sh
+
+RUN chmod +rx /bin/entrypoint.sh
+
+ENTRYPOINT ["/bin/entrypoint.sh"]
