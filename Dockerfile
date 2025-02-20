@@ -5,4 +5,3 @@ FROM europe-west3-docker.pkg.dev/hoprassociation/docker-images/hoprd:${UPSTREAM_
 ENV DAPPNODE=true
 
 ADD hoprd.cfg.yaml /app/hoprd.cfg.yaml
-
