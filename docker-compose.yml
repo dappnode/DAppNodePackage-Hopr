@@ -1,4 +1,4 @@
-version: "3.5"
+version: "3.6"
 services:
   node:
     # Do not set image field here, it will be set automatically by the sdk.
@@ -6,9 +6,8 @@ services:
       context: .
       args:
         # see https://console.cloud.google.com/artifacts/docker/hoprassociation/europe-west3/docker-images/hoprd?inv=1&invt=AbqEGg&project=hoprassociation&pli=1
-        # using 2.2.3 pre-release version
         UPSTREAM_VERSION: >-
-          2.2.3-pr.6884@sha256:5e27190b3dd6debc76776f52dc689bc5fd99abb10c4eb31c8e64e3e6f5bfa8b5
+          2.2.3@sha256:cad18ea69128bc9ae3c43fd776d172978c767eb51a2a001a9d410bb924c7bd51
     ports:
       - "1422:1422/udp"
       - "1422:1422/tcp"
@@ -48,6 +47,7 @@ services:
       HOPRD_SESSION_PORT_RANGE: "10000:10100"
       HOPRD_MAX_BLOCK_RANGE: 100
       HOPRD_MAX_RPC_REQUESTS_PER_SEC: 10
+      HOPRD_NAT: "true"
       ADDITIONAL_CMDLINE_ARGS: ""
       ADDITIONAL_ENVIRONMENT_VARS: ""
     restart: unless-stopped
