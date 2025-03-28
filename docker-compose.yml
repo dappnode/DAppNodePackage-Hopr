@@ -1,3 +1,4 @@
+version: 3
 services:
   node:
     # Do not set image field here, it will be set automatically by the sdk.
