@@ -7,7 +7,7 @@ fields:
       service: node
     title: Identity file password
     required: true
-    pattern: [^\\s]{10,}
+    pattern: "[^\\s]{10,}"
     patternErrorMessage: Must be at least 10 characters long!
     description: >-
       Password used to protect the new or existing identity file.
