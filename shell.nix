@@ -18,6 +18,7 @@ mkShell {
     envsubst
 
     # build utils
+    just
     nodejs_20
 
     # custom pkg groups
