@@ -1,7 +1,7 @@
 ---
 hopr:
   db:
-    data: /app/hoprd-db/db
+    data: /app/hoprd/data
     initialize: true
     force_initialize: false
   strategy:
@@ -28,12 +28,12 @@ hopr:
     keep_logs: true
     fast_sync: true
   safe_module:
-    safe_transaction_service_provider: https://safe-transaction.prod.hoprtech.net/
+    safe_transaction_service_provider: https://safe-transaction.prod.hoprnet.link/
   transport:
     announce_local_addresses: false
     prefer_local_addresses: false
 identity:
-  file: /app/hoprd-db/.hopr-identity
+  file: /app/hoprd/conf/hopr.id
 api:
   enable: true
   host:
