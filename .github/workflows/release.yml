@@ -45,8 +45,8 @@ jobs:
           email: ${{ secrets.ZULIP_EMAIL }}
           organization-url: "https://hopr.zulipchat.com"
           type: "stream"
-          to: "Releases"
-          topic: "main"
+          to: "HOPRd"
+          topic: "Releases"
           content: |
             A new hoprd dAppNode package (dufour) version is available.
             - IPFS Hash: ${{ steps.publish.outputs.ipfs_hash }}
