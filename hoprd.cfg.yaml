@@ -14,12 +14,10 @@ hopr:
         aggregate_on_channel_close: true
       - !AutoRedeeming
         redeem_only_aggregated: true
-        minimum_redeem_ticket_value: "2500000000000000000 HOPR"
+        minimum_redeem_ticket_value: "0.25 wxHOPR"
       - !ClosureFinalizer
         max_closure_overdue: 300
   protocol:
-    heartbeat:
-      timeout: 15
     ticket_aggregation:
       timeout: 15
   chain:

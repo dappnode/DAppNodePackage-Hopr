@@ -7,7 +7,7 @@ services:
       args:
         # see https://console.cloud.google.com/artifacts/docker/hoprassociation/europe-west3/docker-images/hoprd?inv=1&invt=AbqEGg&project=hoprassociation&pli=1
         UPSTREAM_VERSION: >-
-          2.2.3@sha256:cad18ea69128bc9ae3c43fd776d172978c767eb51a2a001a9d410bb924c7bd51
+          3.0.0-rc.1@sha256:9d151098fb6299cdf5be2653317eef8959e1e8915c753c8f23e0594089b9aa9a
     ports:
       - "1422:1422/udp"
       - "1422:1422/tcp"
@@ -62,7 +62,7 @@ services:
     build:
       context: ./hopr-admin
     image: >-
-      europe-west3-docker.pkg.dev/hoprassociation/docker-images/hopr-admin:2.2.0
+      europe-west3-docker.pkg.dev/hoprassociation/docker-images/hopr-admin:kaunas
     ports:
       - "3000:4677"
     restart: unless-stopped
