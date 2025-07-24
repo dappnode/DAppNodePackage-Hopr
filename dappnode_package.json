@@ -1,7 +1,7 @@
 {
   "name": "hopr.public.dappnode.eth",
   "version": "1.0.19",
-  "upstreamVersion": "singapore",
+  "upstreamVersion": "kaunas",
   "description": "The HOPR protocol ensures everyone has control of their privacy, data, and identity. By running a HOPR Node, you can obtain HOPR tokens by relaying data and connect to the HOPR Network.",
   "type": "service",
   "architectures": [
@@ -21,7 +21,7 @@
   "links": {
     "homepage": "https://hoprnet.org/",
     "ui": "http://admin.hopr.public.dappnode:4677/?apiEndpoint=http://hopr.public.dappnode:3001",
-    "api": "http://hopr.public.dappnode:3001/scalar",
+    "api": "http://hopr.public.dappnode:3001/swagger-ui/index.html",
     "docs": "https://docs.hoprnet.org"
   },
   "repository": {

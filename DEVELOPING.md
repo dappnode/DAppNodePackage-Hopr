@@ -8,7 +8,7 @@ There are three repositories:
 
 The `internal` is a fork of the `official` one.  The `testnet` repo is configured specifically to use our `rotsee` testnet
 
-Tha development happens on the internal repository and it has two branches:
+The development happens on the internal repository and it has two branches:
 
 - `develop` which contains the edge version, not meant for publishing
 - `main` which is supposed to be in-sync with the `main` branch on the `official` repo
