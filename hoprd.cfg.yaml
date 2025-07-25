@@ -17,9 +17,6 @@ hopr:
         minimum_redeem_ticket_value: "0.25 wxHOPR"
       - !ClosureFinalizer
         max_closure_overdue: 300
-  protocol:
-    ticket_aggregation:
-      timeout: 15
   chain:
     announce: true
     network: dufour
