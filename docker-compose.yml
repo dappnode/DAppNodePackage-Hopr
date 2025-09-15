@@ -62,7 +62,7 @@ services:
     build:
       context: ./hopr-admin
     image: >-
-      europe-west3-docker.pkg.dev/hoprassociation/docker-images/hopr-admin:kaunas
+      europe-west3-docker.pkg.dev/hoprassociation/docker-images/hopr-admin:3.0.1
     ports:
       - "3000:4677"
     restart: unless-stopped
