@@ -76,7 +76,7 @@ fields:
   - id: CONFIG
     target:
       type: fileUpload
-      path: /app/hoprd.cfg.yaml
+      path: /app/hoprd/conf/hoprd.cfg.yaml
       service: node
     title: Custom HOPR node configuration file
     required: false
