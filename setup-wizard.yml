@@ -148,9 +148,9 @@ fields:
     title: Enable NAT mode
     required: false
     description: |-
-      By default the HOPR node assumes that it is running behind a NAT on a
-      dappnode. If this is not the case or proper port forwarding has been
-      set up this option can be set to `false` to disable NAT mode.
+      By default the HOPR node assumes that it is running behind a NAT when run on a dappnode.
+      If your DAppNode is connected directly to the modem, set this option to `false`. 
+      If it’s connected through a router (behind NAT), leave it as `true`.
     secret: false
     pattern: ^(true|false)$
     patternErrorMessage: Must be either `true` or `false`!
