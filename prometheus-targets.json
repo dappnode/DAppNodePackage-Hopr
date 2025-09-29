@@ -3,7 +3,7 @@
     "labels": {
       "package": "hopr.public.dappnode.eth",
       "service": "node.hopr.dappnode",
-      "__metrics_path__": "/api/v3/node/metrics"
+      "__metrics_path__": "/metrics"
     },
     "targets": [
       "hopr.public.dappnode:3001"
