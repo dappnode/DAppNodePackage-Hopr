@@ -1,114 +1,8 @@
 {
-  "name": "hopr.public.dappnode.eth",
-  "version": "1.0.19",
-  "upstreamVersion": "kaunas",
-  "description": "The HOPR protocol ensures everyone has control of their privacy, data, and identity. By running a HOPR Node, you can obtain HOPR tokens by relaying data and connect to the HOPR Network.",
-  "type": "service",
   "architectures": [
     "linux/amd64"
   ],
-  "mainService": "node",
   "author": "HOPR Association <tech@hoprnet.org> (https://hoprnet.org)",
-  "contributors": [
-    "Tropicar <tropicar@protonmail.com> (https://github.com/tropicar)"
-  ],
-  "upstreamRepo": "hoprnet/hoprnet",
-  "upstreamArg": "UPSTREAM_VERSION",
-  "categories": [
-    "Communications",
-    "Economic incentive"
-  ],
-  "links": {
-    "homepage": "https://hoprnet.org/",
-    "ui": "http://admin.hopr.public.dappnode:4677/?apiEndpoint=http://hopr.public.dappnode:3001",
-    "api": "http://hopr.public.dappnode:3001/swagger-ui/index.html",
-    "docs": "https://docs.hoprnet.org"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dappnode/DAppNodePackage-Hopr"
-  },
-  "bugs": {
-    "url": "https://github.com/dappnode/DAppNodePackage-Hopr/issues"
-  },
-  "requirements": {
-    "minimumDappnodeVersion": "0.2.56"
-  },
-  "exposable": [
-    {
-      "name": "HOPR Admin UI",
-      "description": "Port for HOPR Admin UI console",
-      "port": 3000,
-      "serviceName": "admin"
-    },
-    {
-      "name": "HOPR REST API",
-      "description": "Port for HOPR node REST API",
-      "port": 3001,
-      "serviceName": "node"
-    },
-    {
-      "name": "HOPR p2p",
-      "description": "HOPR P2P port",
-      "port": 9091,
-      "serviceName": "node"
-    },
-    {
-      "name": "GnosisVPN Session port",
-      "description": "Port used for Gnosis VPN",
-      "port": 1422,
-      "serviceName": "node"
-    },
-    {
-      "name": "HOPR p2p (alt 1)",
-      "description": "HOPR P2P port (alternative 1)",
-      "port": 9092,
-      "serviceName": "node"
-    },
-    {
-      "name": "HOPR p2p (alt 2)",
-      "description": "HOPR P2P port (alternative 2)",
-      "port": 9093,
-      "serviceName": "node"
-    },
-    {
-      "name": "HOPR p2p (alt 3)",
-      "description": "HOPR P2P port (alternative 3)",
-      "port": 9094,
-      "serviceName": "node"
-    },
-    {
-      "name": "HOPR p2p (alt 4)",
-      "description": "HOPR P2P port (alternative 4)",
-      "port": 9095,
-      "serviceName": "node"
-    },
-    {
-      "name": "HOPR p2p (alt 5)",
-      "description": "HOPR P2P port (alternative 5)",
-      "port": 9096,
-      "serviceName": "node"
-    },
-    {
-      "name": "HOPR p2p (alt 6)",
-      "description": "HOPR P2P port (alternative 6)",
-      "port": 9097,
-      "serviceName": "node"
-    },
-    {
-      "name": "HOPR p2p (alt 7)",
-      "description": "HOPR P2P port (alternative 7)",
-      "port": 9098,
-      "serviceName": "node"
-    },
-    {
-      "name": "HOPR p2p (alt 8)",
-      "description": "HOPR P2P port (alternative 8)",
-      "port": 9099,
-      "serviceName": "node"
-    }
-  ],
-  "license": "GLP-3.0",
   "backup": [
     {
       "name": "data",
@@ -117,6 +11,91 @@
     {
       "name": "config",
       "path": "/app/hoprd/conf"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/dappnode/DAppNodePackage-Hopr/issues"
+  },
+  "categories": [
+    "Communications",
+    "Economic incentive"
+  ],
+  "contributors": [
+    "Tropicar <tropicar@protonmail.com> (https://github.com/tropicar)"
+  ],
+  "description": "The HOPR protocol ensures everyone has control of their privacy, data, and identity. By running a HOPR Node, you can obtain HOPR tokens by relaying data and connect to the HOPR Network.",
+  "exposable": [
+    {
+      "description": "Port for HOPR Admin UI console",
+      "name": "HOPR Admin UI",
+      "port": 3000,
+      "serviceName": "admin"
+    },
+    {
+      "description": "Port for HOPR node REST API",
+      "name": "HOPR REST API",
+      "port": 3001,
+      "serviceName": "node"
+    },
+    {
+      "description": "HOPR P2P port",
+      "name": "HOPR p2p",
+      "port": 9091,
+      "serviceName": "node"
+    },
+    {
+      "description": "Port used for Gnosis VPN",
+      "name": "GnosisVPN Session port",
+      "port": 1422,
+      "serviceName": "node"
+    },
+    {
+      "description": "HOPR P2P port (alternative 1)",
+      "name": "HOPR p2p (alt 1)",
+      "port": 9092,
+      "serviceName": "node"
+    },
+    {
+      "description": "HOPR P2P port (alternative 2)",
+      "name": "HOPR p2p (alt 2)",
+      "port": 9093,
+      "serviceName": "node"
+    },
+    {
+      "description": "HOPR P2P port (alternative 3)",
+      "name": "HOPR p2p (alt 3)",
+      "port": 9094,
+      "serviceName": "node"
+    },
+    {
+      "description": "HOPR P2P port (alternative 4)",
+      "name": "HOPR p2p (alt 4)",
+      "port": 9095,
+      "serviceName": "node"
+    },
+    {
+      "description": "HOPR P2P port (alternative 5)",
+      "name": "HOPR p2p (alt 5)",
+      "port": 9096,
+      "serviceName": "node"
+    },
+    {
+      "description": "HOPR P2P port (alternative 6)",
+      "name": "HOPR p2p (alt 6)",
+      "port": 9097,
+      "serviceName": "node"
+    },
+    {
+      "description": "HOPR P2P port (alternative 7)",
+      "name": "HOPR p2p (alt 7)",
+      "port": 9098,
+      "serviceName": "node"
+    },
+    {
+      "description": "HOPR P2P port (alternative 8)",
+      "name": "HOPR p2p (alt 8)",
+      "port": 9099,
+      "serviceName": "node"
     }
   ],
   "globalEnvs": [
@@ -128,5 +107,26 @@
         "node"
       ]
     }
-  ]
+  ],
+  "license": "GLP-3.0",
+  "links": {
+    "api": "http://hopr.public.dappnode:3001/swagger-ui/index.html",
+    "docs": "https://docs.hoprnet.org",
+    "homepage": "https://hoprnet.org/",
+    "ui": "http://admin.hopr.public.dappnode:4677/?apiEndpoint=http://hopr.public.dappnode:3001"
+  },
+  "mainService": "node",
+  "name": "hopr.public.dappnode.eth",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dappnode/DAppNodePackage-Hopr"
+  },
+  "requirements": {
+    "minimumDappnodeVersion": "0.2.56"
+  },
+  "type": "service",
+  "upstreamArg": "UPSTREAM_VERSION",
+  "upstreamRepo": "hoprnet/hoprnet",
+  "upstreamVersion": "3.0.2",
+  "version": "1.0.20"
 }
