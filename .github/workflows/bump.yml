@@ -7,9 +7,15 @@ on:
       hoprd_version:
         description: 'Version of hoprd to build'
         required: false
+permissions:
+  contents: read
+
 jobs:
   bump:
     name: Bump docker images
+    permissions:
+      contents: write
+      pull-requests: write
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository

@@ -4,6 +4,9 @@ on:
   pull_request:
     types: [closed]
 
+permissions:
+  contents: read
+
 jobs:
   publish-ipfs:
     name: Publish merged build to IPFS
