@@ -5,9 +5,8 @@ services:
     build:
       context: .
       args:
-        # see https://console.cloud.google.com/artifacts/docker/hoprassociation/europe-west3/docker-images/hoprd?inv=1&invt=AbqEGg&project=hoprassociation&pli=1
-        UPSTREAM_VERSION: >-
-          3.0.2@sha256:9956ce16721b34298b009e48d1f3560fab798c2fccc5b8bcd0a4d4dcedf0f006
+        # see https://console.cloud.google.com/artifacts/docker/hoprassociation/europe-west3/docker-images/hoprd
+        UPSTREAM_VERSION: 5.0.0-rc.1-pr.187
     ports:
       - "1422:1422/udp"
       - "1422:1422/tcp"
@@ -33,21 +32,27 @@ services:
       - "10000-10100:10000-10100/tcp"
       - "10000-10100:10000-10100/udp"
     volumes:
-      - "data:/app/hoprd/data"
-      - "conf:/app/hoprd/conf"
+      - "node-data:/app/hoprd/data"
+      - "node-conf:/app/hoprd/conf"
     security_opt:
       - "seccomp:unconfined"
     environment:
       RUST_LOG: info
       HOPRD_CONFIGURATION_FILE_PATH: /app/hoprd/conf/hoprd.cfg.yaml
+      HOPRD_IDENTITY: /app/hoprd/conf/hopr.id
+      HOPRD_DATA: /app/hoprd/data
       HOPRD_HOST: "127.0.0.1:9091"
-      HOPRD_SAFE_ADDRESS: 0x
-      HOPRD_MODULE_ADDRESS: 0x
+      # Count flags, not booleans: "0" = off, "1" = on ("true"/"false" fail to parse).
+      HOPRD_ANNOUNCE: "1"
+      HOPRD_API: "1"
+      HOPRD_API_HOST: "0.0.0.0"
+      HOPRD_SAFE_ADDRESS: "0x0000000000000000000000000000000000000000"
+      HOPRD_MODULE_ADDRESS: "0x0000000000000000000000000000000000000000"
       HOPRD_PASSWORD: ""
-      HOPRD_PROVIDER: ""
+      HOPRD_API_TOKEN: ""
+      # Set this to override the value in hoprd.cfg.yaml
+      HOPRD_BLOKLI_URL: ""
       HOPRD_SESSION_PORT_RANGE: "10000:10100"
-      HOPRD_MAX_BLOCK_RANGE: 100
-      HOPRD_MAX_RPC_REQUESTS_PER_SEC: 10
       HOPRD_NAT: "true"
       ADDITIONAL_CMDLINE_ARGS: ""
       ADDITIONAL_ENVIRONMENT_VARS: ""
@@ -56,20 +61,6 @@ services:
       resources:
         limits:
           memory: 2G
-  admin:
-    # The actual image name  will be set automatically by the sdk.
-    # This tag only serves to pull the correct image during build.
-    build:
-      context: ./hopr-admin
-    image: >-
-      europe-west3-docker.pkg.dev/hoprassociation/docker-images/hopr-admin:3.0.3
-    ports:
-      - "3000:4677"
-    restart: unless-stopped
-    deploy:
-      resources:
-        limits:
-          memory: 256M
 volumes:
-  data: {}
-  conf: {}
+  node-data: {}
+  node-conf: {}

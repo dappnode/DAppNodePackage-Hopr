@@ -1,0 +1,38 @@
+name: Merge
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  publish-ipfs:
+    name: Publish merged build to IPFS
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.ref }}
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Set up Docker Compose
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker-compose
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build and upload to IPFS
+        run: |
+          npx @dappnode/dappnodesdk build \
+            --provider "remote" \
+            --verbose | tee build.log
+
+          ipfs_hash=$(grep -oP 'Release hash *: \K/ipfs/\w+' build.log)
+
+          echo "### DNP (DAppNode Package) built and uploaded" >> "$GITHUB_STEP_SUMMARY"
+          echo "Merged build published to IPFS: \`${ipfs_hash}\`" >> "$GITHUB_STEP_SUMMARY"

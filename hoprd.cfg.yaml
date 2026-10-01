@@ -1,35 +1,72 @@
 ---
+blokli_url: https://blokli-piz-palu.prod.hoprnet.link
 hopr:
-  db:
-    data: /app/hoprd/data
-    initialize: true
-    force_initialize: false
-  strategy:
-    on_fail_continue: true
-    allow_recursive: true
-    strategies:
-      - !AutoRedeeming
-        redeem_only_aggregated: false
-        minimum_redeem_ticket_value: "1 wxHOPR"
-      - !ClosureFinalizer
-        max_closure_overdue: 300
-  chain:
-    announce: true
-    network: dufour
-    keep_logs: true
-    fast_sync: true
-  safe_module:
-    safe_transaction_service_provider: https://safe-transaction.prod.hoprnet.link/
-  transport:
-    announce_local_addresses: false
-    prefer_local_addresses: false
-identity:
-  file: /app/hoprd/conf/hopr.id
-api:
-  enable: true
-  host:
-    address: !IPv4 0.0.0.0
-    port: 3001
-session_ip_forwarding:
-  target_allow_list: []
-
+  network:
+    pix:
+      num_ssa_parts: 4096
+      ssa_part_size: 64
+      additional_shares: 20
+      max_ssas_per_request: 3
+    incoming_session_pix:
+      enforce_pix: false
+      max_ssa_delivery_time: 20s
+      max_deposit_wait: 60s
+      ssas_per_request: 1
+strategy:
+  allow_recursive: false
+  execution_interval: 15s
+  strategies:
+    - ChannelLifecycle:
+        population:
+          min_open_channels: 5
+          target_open_channels: 8
+        eligibility:
+          require_currently_connected: true
+          min_peer_quality_score: 0.5
+          peer_quality_weight: 0.6
+          ticket_activity_weight: 0.4
+          require_observed_since_start: true
+          allowlist: ~
+          blocklist: []
+        # Channel funding is expressed as data capacity; the node resolves each
+        # capacity to wxHOPR every tick using live ticket economics. Since
+        # hopr-strategy 0.25 the hop count is fixed at ASSUMED_HOPS = 3 and the
+        # assumed_hops key is rejected outright (deny_unknown_fields):
+        #   N     = ceil(capacity_bytes / 1038)   # HoprPacket::PAYLOAD_SIZE
+        #   F     = ticket_price * 3 / winning_prob   # one winning ticket
+        #   E     = N * 3 * ticket_price              # mean drain
+        #   stake = whole_tickets(max(F, E))          # sizing_mode: deterministic
+        #
+        # Every capacity is floored at one winning ticket and then rounded up to
+        # a whole number of them, so the tiers below only stay distinct while
+        # they sit above that floor. Note deterministic changed meaning in 0.23:
+        # it is the mean drain floored at one ticket, no longer a worst case.
+        # ticket_price = 1e-16 wxHOPR, winning_prob = 1.25e-4
+        #   => F = 2.4e-12 wxHOPR (2400000 wei); the floor binds below ~8.3 MB.
+        #   stake (initial_capacity)           = 1 GiB   -> 130 tickets -> 312000000 wei
+        #   topup (topup_capacity)             = 1 GiB   -> 130 tickets -> 312000000 wei
+        #   floor (lower_capacity_threshold)   = 256 MiB ->  33 tickets ->  79200000 wei   topup trigger
+        # hopr-strategy 5 derives the safe-balance floor from live demand; no config key for it.
+        funding:
+          initial_capacity: "1 GiB"
+          topup_capacity: "1 GiB"
+          lower_capacity_threshold: "256 MiB"
+          sizing_mode: deterministic
+        proactive_funding:
+          enabled: true
+          safety_margin: 1.5
+          balance_drain_weight: 1.0
+          ticket_index_drain_weight: 1.0
+        closure:
+          close_below_quality_score: 0.3
+          close_when_drained_below: "0 wxHOPR"
+          close_max_concurrent: 2
+        finalizer:
+          enabled: true
+          finalize_max_concurrent: 4
+        restart: {}
+        concurrency:
+          max_concurrent_actions: 4
+        selector: default
+    - AutoRedeeming:
+        minimum_redeem_ticket_value: "1 wei wxHOPR"
