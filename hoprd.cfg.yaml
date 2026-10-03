@@ -18,8 +18,8 @@ strategy:
   strategies:
     - ChannelLifecycle:
         population:
-          min_open_channels: 5
-          target_open_channels: 8
+          min_open_channels: 10
+          target_open_channels: 40
         eligibility:
           require_currently_connected: true
           min_peer_quality_score: 0.5
@@ -45,13 +45,11 @@ strategy:
         #   => F = 2.4e-12 wxHOPR (2400000 wei); the floor binds below ~8.3 MB.
         #   stake (initial_capacity)           = 1 GiB   -> 130 tickets -> 312000000 wei
         #   topup (topup_capacity)             = 1 GiB   -> 130 tickets -> 312000000 wei
-        #   floor (lower_capacity_threshold)   = 256 MiB ->  33 tickets ->  79200000 wei   topup trigger
-        # hopr-strategy 5 derives the safe-balance floor from live demand; no config key for it.
+        #   floor (lower_capacity_threshold)   = 512 MiB ->  65 tickets -> 156000000 wei   topup trigger
         funding:
           initial_capacity: "1 GiB"
           topup_capacity: "1 GiB"
-          lower_capacity_threshold: "256 MiB"
-          sizing_mode: deterministic
+          lower_capacity_threshold: "512 MiB"
         proactive_funding:
           enabled: true
           safety_margin: 1.5
@@ -63,10 +61,10 @@ strategy:
           close_max_concurrent: 2
         finalizer:
           enabled: true
-          finalize_max_concurrent: 4
+          finalize_max_concurrent: 30
         restart: {}
         concurrency:
-          max_concurrent_actions: 4
+          max_concurrent_actions: 30
         selector: default
     - AutoRedeeming:
         minimum_redeem_ticket_value: "1 wei wxHOPR"
