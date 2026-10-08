@@ -45,14 +45,6 @@ jobs:
         env:
           DOCKER_REGISTRY: ${{ vars.DOCKER_REGISTRY }}
           HOPRD_VERSION: ${{ steps.setup.outputs.HOPRD_VERSION }}
-      - name: Install dependencies
-        run: |
-          npm install
-      - name: Build
-        run: |
-          npx @dappnode/dappnodesdk build \
-            --provider "remote" \
-            --verbose | tee build.log
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
         with:
@@ -62,4 +54,5 @@ jobs:
           branch: bot/update-${{ github.run_id}}
           delete-branch: true
           assignees: ${{ github.actor }}
+          labels: publish-ipfs
           reviewers: "ausias-armesto,tolbrino,NumberFour8,Teebor-Choka,QYuQianchen,jeandemeusy,Jaguaras"
