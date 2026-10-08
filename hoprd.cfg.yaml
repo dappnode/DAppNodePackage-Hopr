@@ -14,7 +14,7 @@ strategy:
           min_open_channels: 5
           target_open_channels: 20
           peer_reopen_cooldown: 30m
-       funding:
+        funding:
           initial_capacity: "1 GiB"
           topup_capacity: "512 MiB"
           lower_capacity_threshold: "512 MiB"
