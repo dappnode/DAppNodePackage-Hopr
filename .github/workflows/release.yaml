@@ -1,0 +1,102 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_type:
+        description: Version type for this release
+        required: true
+        type: choice
+        default: "patch"
+        options:
+          - patch
+          - minor
+          - major
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      # `secrets` isn't a valid context inside `if:` (only env/github/inputs/... are) - see
+      # the "Notify Zulip" step below, which needs these to decide whether to run at all.
+      ZULIP_EMAIL: ${{ secrets.ZULIP_EMAIL }}
+      ZULIP_API_KEY: ${{ secrets.ZULIP_API_KEY }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Set up Docker Compose
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker-compose
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate release notes
+        uses: hoprnet/hopr-workflows/actions/generate-release-notes@c20a995078b3a9a66ae9e6689d08d38ea37b5a0b # generate-release-notes-v1.0.1
+        with:
+          source_branch: ${{ github.ref_name }}
+          format: github
+          release_notes_file: ./release-notes.md
+
+      - name: Add release notes to summary
+        run: |
+          echo "### Release notes" >> "$GITHUB_STEP_SUMMARY"
+          cat release-notes.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Build and publish to package repository
+        id: publish
+        run: |
+          npx @dappnode/dappnodesdk publish "${{ inputs.release_type }}" \
+            --provider "remote" \
+            --upload_to "ipfs" \
+            --verbose \
+            --github_release | tee build.log
+
+          new_version=$(jq -r '.version' dappnode_package.json)
+          ipfs_hash=$(grep -oP 'Release hash *: \K/ipfs/\w+' build.log)
+
+          echo "### DNP (DAppNode Package) built and uploaded" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Version: \`${new_version}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "- IPFS Hash: \`${ipfs_hash}\`" >> "$GITHUB_STEP_SUMMARY"
+
+          echo "new_version=$new_version" >> "$GITHUB_OUTPUT"
+          echo "ipfs_hash=$ipfs_hash" >> "$GITHUB_OUTPUT"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEVELOPER_ADDRESS: "0x7305356ad936A06c4ea5DF45AD5E5C3ff9Db818E"
+
+      - name: Add release notes to the Github release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          tag="v${{ steps.publish.outputs.new_version }}"
+          gh release edit "$tag" --repo "${{ github.repository }}" --notes-file release-notes.md
+
+      - name: Notify Zulip
+        if: ${{ env.ZULIP_EMAIL != '' && env.ZULIP_API_KEY != '' }}
+        uses: zulip/github-actions-zulip/send-message@v1
+        with:
+          api-key: ${{ env.ZULIP_API_KEY }}
+          email: ${{ env.ZULIP_EMAIL }}
+          organization-url: "https://hopr.zulipchat.com"
+          type: "stream"
+          to: HOPRd
+          topic: Releases
+          content: |
+            A new hoprd dAppNode package version v${{ steps.publish.outputs.new_version }} is available.
+            - IPFS Hash: ${{ steps.publish.outputs.ipfs_hash }}
+            Access your dAppNode and check for updates.

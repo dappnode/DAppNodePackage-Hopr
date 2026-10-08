@@ -1,0 +1,63 @@
+name: PR
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, labeled]
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Test package
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate hoprd.cfg.yaml
+        run: ./test/validate-hoprd-config.sh
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Set up Docker Compose
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker-compose
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build package (validate manifest and compose file)
+        run: npx @dappnode/dappnodesdk build --skip_upload --verbose
+
+  publish-ipfs:
+    name: Publish test build to IPFS
+    needs: test
+    if: contains(github.event.pull_request.labels.*.name, 'publish-ipfs')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Set up Docker Compose
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker-compose
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build and upload to IPFS
+        run: |
+          npx @dappnode/dappnodesdk build \
+            --provider "remote" \
+            --verbose | tee build.log
+
+          ipfs_hash=$(grep -oP 'Release hash *: \K/ipfs/\w+' build.log)
+
+          echo "### DNP (DAppNode Package) built and uploaded" >> "$GITHUB_STEP_SUMMARY"
+          echo "Test build published to IPFS: \`${ipfs_hash}\`" >> "$GITHUB_STEP_SUMMARY"

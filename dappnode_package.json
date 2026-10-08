@@ -1,7 +1,7 @@
 {
   "name": "hopr.public.dappnode.eth",
   "version": "1.0.19",
-  "upstreamVersion": "kaunas",
+  "upstreamVersion": "5.0.0-rc.1",
   "description": "The HOPR protocol ensures everyone has control of their privacy, data, and identity. By running a HOPR Node, you can obtain HOPR tokens by relaying data and connect to the HOPR Network.",
   "type": "service",
   "architectures": [
@@ -18,12 +18,6 @@
     "Communications",
     "Economic incentive"
   ],
-  "links": {
-    "homepage": "https://hoprnet.org/",
-    "ui": "http://admin.hopr.public.dappnode:4677/?apiEndpoint=http://hopr.public.dappnode:3001",
-    "api": "http://hopr.public.dappnode:3001/swagger-ui/index.html",
-    "docs": "https://docs.hoprnet.org"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dappnode/DAppNodePackage-Hopr"
@@ -35,12 +29,6 @@
     "minimumDappnodeVersion": "0.2.56"
   },
   "exposable": [
-    {
-      "name": "HOPR Admin UI",
-      "description": "Port for HOPR Admin UI console",
-      "port": 3000,
-      "serviceName": "admin"
-    },
     {
       "name": "HOPR REST API",
       "description": "Port for HOPR node REST API",
@@ -108,7 +96,7 @@
       "serviceName": "node"
     }
   ],
-  "license": "GLP-3.0",
+  "license": "GPL-3.0",
   "backup": [
     {
       "name": "data",
@@ -128,5 +116,10 @@
         "node"
       ]
     }
-  ]
+  ],
+  "links": {
+    "homepage": "https://hoprnet.org/",
+    "api": "http://hopr.public.dappnode:3001/swagger-ui/index.html",
+    "docs": "https://docs.hoprnet.org"
+  }
 }
