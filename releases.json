@@ -52,5 +52,11 @@
     "uploadedTo": {
       "dappnode": "Mon, 12 Feb 2024 20:53:18 GMT"
     }
+  },
+  "1.0.19": {
+    "hash": "/ipfs/QmWz8BpVKUVuwuZZgJF9vjEGqHnfFg9BVBY7TePQSwm9YX",
+    "uploadedTo": {
+      "remote": "Thu, 08 Oct 2026 09:26:10 GMT"
+    }
   }
 }
