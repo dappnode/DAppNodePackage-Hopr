@@ -2,8 +2,8 @@
 blokli_url: https://blokli.piz-palu.gnosisvpn.io
 hopr:
   network:
-    probe_interval: 30s
-    probe_recheck_threshold: 60s
+    probe_interval: 60s
+    probe_recheck_threshold: 120s
 strategy:
   allow_recursive: false
   strategies:
