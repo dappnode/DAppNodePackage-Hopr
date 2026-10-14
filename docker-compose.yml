@@ -6,7 +6,7 @@ services:
       context: .
       args:
         # see https://console.cloud.google.com/artifacts/docker/hoprassociation/europe-west3/docker-images/hoprd
-        UPSTREAM_VERSION: 5.0.0
+        UPSTREAM_VERSION: 5.0.0@sha256:b37d5244e7e764b4cec34359c70019cd15755a5375340aaf83f6d325646356ba
     ports:
       - "1422:1422/udp"
       - "1422:1422/tcp"
