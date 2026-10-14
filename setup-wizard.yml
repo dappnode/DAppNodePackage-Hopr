@@ -37,7 +37,7 @@ fields:
     description: |-
       URL to the Blokli provider this HOPR node should use.
 
-      *Example:* `https://blokli-piz-palu.prod.hoprnet.link`
+      *Example:* `https://blokli.piz-palu.gnosisvpn.io`
     secret: false
     # Regular expression for matching URLs with simple query strings
     #
