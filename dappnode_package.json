@@ -1,10 +1,10 @@
 {
   "name": "hopr.public.dappnode.eth",
-  "version": "1.0.19",
+  "version": "1.0.32",
   "upstream": [
     {
       "repo": "hoprnet/hoprnet",
-      "version": "5.0.0",
+      "version": "5.0.2",
       "arg": "UPSTREAM_VERSION"
     }
   ],
