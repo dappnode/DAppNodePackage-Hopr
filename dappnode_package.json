@@ -4,7 +4,7 @@
   "upstream": [
     {
       "repo": "hoprnet/hoprnet",
-      "version": "5.0.0",
+      "version": "5.0.2",
       "arg": "UPSTREAM_VERSION"
     }
   ],
