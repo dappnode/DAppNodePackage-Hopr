@@ -31,10 +31,20 @@ jobs:
           # hoprd versions are published as image tags, not GitHub releases.
           provider: docker_tags
 
+      - name: Create TropiBot token
+        id: app-token
+        if: steps.bump.outputs.changed == 'true'
+        uses: actions/create-github-app-token@64ab729a6294000f5aa4a4bc0b73d1f32bc45510 # v3
+        with:
+          client-id: ${{ vars.TROPI_APP_ID }}
+          private-key: ${{ secrets.TROPI_APP_PRIVATE_KEY }}
+
       - name: Create Pull Request
         if: steps.bump.outputs.changed == 'true'
         uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
         with:
+          # Open the PR as TropiBot so PR workflows (and the publish-ipfs label) trigger.
+          token: ${{ steps.app-token.outputs.token }}
           commit-message: "ci: Update docker images"
           title: "ci: Update hoprd to ${{ steps.bump.outputs.version }}"
           body: |
