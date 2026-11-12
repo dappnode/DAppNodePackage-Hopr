@@ -55,5 +55,5 @@ jobs:
           branch: bot/update-${{ github.run_id}}
           delete-branch: true
           assignees: ${{ github.actor }}
-          labels: publish-ipfs
+          labels: publish-ipfs,upstream-bump
           reviewers: "ausias-armesto,tolbrino,NumberFour8,Teebor-Choka,QYuQianchen,jeandemeusy,Jaguaras"
